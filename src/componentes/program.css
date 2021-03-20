@@ -1,0 +1,491 @@
+.PanelActivity{
+    height: 600px;
+    width: 80%;
+    
+    margin-left: 11.5%;
+    margin-top: -4%;
+    
+   }
+
+  
+   
+   .containerNavPanelAct{
+    position: relative;
+    height: 7%;
+    width: 100%;
+    background-color: rgb(253, 244, 249);
+    border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-top: 0.2px solid;
+    border-color: rgb(219, 219, 219);
+   }
+
+
+   .NewActivity{
+    position: absolute;
+    height: 80%;
+    width: 4%;
+    
+    left: 0px;
+    top: 0px;
+    padding-top: 8px;
+
+   }
+   
+   .NewActivity:hover{
+       cursor: pointer;
+   }
+
+   .showCalendar{
+    position: absolute;
+    height: 80%;
+    width: 4%;
+ right:  60px;
+    top: 0px;
+    padding-top: 8px;
+   }
+   .showSlide{
+    position: absolute;
+    height: 80%;
+    width: 4%;
+    
+    right:  0px;
+    top: 0px;
+    padding-top: 8px;
+   }
+
+   .showCalendar:hover{
+     cursor: pointer;
+   }
+
+   .showSlide{
+    position: absolute;
+    height: 80%;
+    width: 4%;
+    
+    right:  0px;
+    top: 0px;
+    padding-top: 8px;
+   }
+
+   .showSlide:hover{
+     cursor: pointer;
+   }
+
+
+
+   .showSlideActivitiesPanel{
+    position: relative;
+    height: 96%;
+    width: 100%;
+    border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    border-bottom: 0.2px solid;
+    border-color: rgb(219, 219, 219);
+    background-color: rgba(250, 250, 250, 0.979);
+    
+   }
+   
+
+
+   
+
+/*   ****************************  formulario de agregar programa *************************************************** */
+
+
+
+
+
+.SetpictureActivity{
+    position: absolute;
+    height: 46%;
+    width: 45%;
+ left:  12%;
+    top: 3%;
+    border-radius: 5%;
+    background-color: rgb(235, 233, 233);
+
+}
+
+.SetTitleActivity{
+    position: absolute;
+    height: 5%;
+    width: 25%;
+ left:  66%;
+    top: 3.5%;
+    
+    overflow: hidden;
+    
+
+}
+
+.SetTitleNewSchool{
+  position: absolute;
+  height: 5%;
+  width: 35%;
+left:  66%;
+  top: 35%;
+  
+  overflow: hidden;
+  
+
+}
+
+.SetdescriptionActivity{
+    position: absolute;
+    height: 7%;
+    width: 25%;
+ left:  66%;
+    top: 12.5%;
+    align-items: left;
+    
+    overflow: hidden;
+    
+
+}
+
+
+.SetPasswordNewS{
+  position: absolute;
+  height: 7%;
+    width: 25%;
+left:  95%;
+  top: 95%;
+  align-items: left;
+  
+  overflow: hidden;
+  
+
+}
+
+.SetcalendarActivity{
+    position: absolute;
+    height: 8%;
+    width: 15%;
+ left:  67.5%;
+    top: 22%;
+   
+    align-items: left;
+
+}
+
+
+.SetSaveActivity{
+  position: absolute;
+  height: 7%;
+  width: 10%;
+left:  68%;
+  top: 44.5%;
+
+  align-items: left;
+}
+
+.SetCategory{
+  position: absolute;
+  height: 7%;
+  width: 10%;
+left:  67.5%;
+  top: 31.5%;
+
+}
+
+.SaveActivityButton{
+  height: 35px;
+  width: 120px;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 14px;
+
+
+}
+
+.SaveActivityButton:hover{
+cursor: pointer;
+background-color: black;
+color: rgb(230, 230, 230);
+font-size: 15px;
+
+}
+
+.SaveActivityButton:focus{
+  outline: none;
+}
+.inputfile{
+
+  width: 0.1px;
+height: 0.1px;
+opacity: 0;
+overflow: hidden;
+position: absolute;
+z-index: -1;
+ }
+
+ .DivUploadPicActivity{
+  position: absolute;
+  left:  58%;
+  top: 45.5%;
+
+}
+     .DivUploadHelpActivity{
+        position: absolute;
+        left:  58.8%;
+  top: 52.5%;
+        background-color: grey ;
+        opacity:0.8;
+        font-size: 14.5px;
+        color: whitesmoke;
+        font-style: normal;
+        width: 120px;
+  height: 25px;
+     }
+
+.SetCoursesActivity{
+    position: absolute;
+    height: 38%;
+    width: 25%;
+ left:  5%;
+    top: 58%;
+   
+    overflow:auto;
+    border-radius: 10%;
+}
+
+.SetCoursesActivity::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .SetCoursesActivity::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .SetCoursesActivity::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .SetCoursesActivity::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }
+
+  .PanelDeleteActivity{
+    position:relative; 
+    height:575px; 
+    overflow:auto; 
+  }
+
+  .PanelDeleteActivity::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  .PanelDeleteActivity::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .PanelDeleteActivity::-webkit-scrollbar-thumb {
+    background:#afb1b1ec
+  }
+  
+  /* Handle on hover */
+  .PanelDeleteActivity::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }
+
+
+  .SetCoursesActivityCourses{
+
+    position: absolute;
+    height: 38%;
+    width: 25%;
+ left:  35%;
+    top: 58%;
+ border: 0.2px solid;
+ border-color: rgb(224, 222, 222);
+    overflow:auto;
+    border-radius: 10%;
+
+  }
+
+
+  .SetCoursesActivityCoursesTeach{
+
+    position: absolute;
+    height: 38%;
+    width: 30%;
+ left:  15%;
+    top: 58%;
+ border: 0.2px solid;
+ border-color: rgb(224, 222, 222);
+    overflow:auto;
+    border-radius: 10%;
+
+  }
+
+  
+  .PanelCoursesInDeleteActivity{
+    position: absolute;; 
+top:18%;
+left:80%;
+width:195px;
+height: 140px;
+   
+    overflow:auto; 
+
+
+    
+  }
+
+
+  .PanelCoursesInDeleteActivity::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  .PanelCoursesInDeleteActivity::-webkit-scrollbar-track {
+    background: transparent 
+  }
+   
+  /* Handle */
+  .PanelCoursesInDeleteActivity::-webkit-scrollbar-thumb {
+    background:#c2c2c2ec
+  }
+  
+  /* Handle on hover */
+  .PanelCoursesInDeleteActivity::-webkit-scrollbar-thumb:hover {
+    background:#c2c2c2ec
+  }
+
+
+
+
+  .SetCoursesActivityCourses::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .SetCoursesActivityCourses::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .SetCoursesActivityCourses::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .SetCoursesActivityCourses::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }
+
+
+  
+  .SetCoursesActivityCoursesTeach::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .SetCoursesActivityCoursesTeach::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .SetCoursesActivityCoursesTeach::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .SetCoursesActivityCoursesTeach::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }
+
+  .SetListCoursesforActivity{
+    position: absolute;
+    height: 38%;
+    width: 25%;
+ left:  66%;
+    top: 58%;
+ border: 0.2px solid;
+ border-color: rgb(224, 222, 222);
+    overflow:auto;
+    border-radius: 10%;
+
+  }
+
+  
+  .SetListCoursesforActivityTeach{
+    position: absolute;
+    height: 38%;
+    width: 30%;
+ left:  55%;
+    top: 58%;
+ border: 0.2px solid;
+ border-color: rgb(224, 222, 222);
+    overflow:auto;
+    border-radius: 10%;
+
+  }
+  .AssignmentCourseActivity{
+    position: absolute;
+    height: 7%;
+    width: 7%;
+ left:  59%;
+    top: 80%;
+opacity: 0.48;
+
+  }
+
+  .AssignmentCourseActivityTeach{
+    position: absolute;
+    height: 7%;
+    width: 7%;
+ left:  45.8%;
+    top: 80%;
+opacity: 0.48;
+
+  }
+
+  .AssignmentCourseActivity:hover{
+
+    cursor: pointer;
+  }
+
+  .AssignmentCourseActivityTeach:hover{
+    cursor: pointer;
+  }
+
+.PrevActivity{
+
+  position:absolute; 
+  top:92%;
+  left:2%;
+  width:30px;
+  height:30px;
+  z-index: 10;
+  opacity: 0.35;
+}
+.PrevActivity:hover{
+  cursor: pointer;
+}
+
+
+.NextActivity{
+
+  position:absolute; 
+  top:92%;
+  left:25%;
+  width:30px;
+  height:30px;
+  z-index: 10;
+  opacity: 0.35;
+}
+.NextActivity:hover{
+  cursor: pointer;
+}
+
+
+
+
+

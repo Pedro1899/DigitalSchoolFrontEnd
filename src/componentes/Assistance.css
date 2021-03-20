@@ -1,0 +1,65 @@
+.CourseContainer{
+
+  position:absolute;
+   left:7%;
+   top:80px ;
+
+    width:145px ;
+    height:500px;
+     overflow:auto;
+    }
+
+    .CoursesLessonContainer{
+      position:absolute;
+      left:15%;
+      top:80px ;
+   
+       width:72% ;
+       height:500px;
+        overflow:auto;
+        border: 1px solid;
+        border-color: rgb(226, 226, 226);
+        border-radius: 5%;
+    }
+
+    .CourseContainer::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    /* Track */
+    .CourseContainer::-webkit-scrollbar-track {
+      background: transparent; 
+    }
+     
+    /* Handle */
+    .CourseContainer::-webkit-scrollbar-thumb {
+      background:#9a9b9bec
+    }
+    
+    /* Handle on hover */
+    .CourseContainer::-webkit-scrollbar-thumb:hover {
+      background: #9a9b9bec 
+    }
+  
+    
+
+
+    
+    .CoursesLessonContainer::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    /* Track */
+    .CoursesLessonContainer::-webkit-scrollbar-track {
+      background: transparent; 
+    }
+     
+    /* Handle */
+    .CoursesLessonContainer::-webkit-scrollbar-thumb {
+      background:#9a9b9bec
+    }
+    
+    /* Handle on hover */
+    .CoursesLessonContainer::-webkit-scrollbar-thumb:hover {
+      background: #9a9b9bec 
+    }

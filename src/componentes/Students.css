@@ -1,0 +1,528 @@
+.PanelStudents{
+    height: 588px;
+    width: 95%;
+    margin-left: 70px;
+
+    margin-top: -40px;
+    overflow: hidden;
+   
+    }
+
+    .inputfile{
+
+        width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+    z-index: -1;
+       }
+
+       
+     .DivUpload{
+        position: absolute;
+        top: 200px;
+        left: 320px;
+
+     }
+     .MessageAlertPicture{
+
+        height: 20px;
+        width: 100px;
+        position: absolute;
+        top: 170px;
+        left: 325px;
+        font-size: 12px;
+        color: red;
+        border: 0.5px solid;
+    
+    }
+     .DivUploadHelp{
+        position: absolute;
+        top: 240px;
+        left: 300px;
+        background-color: grey ;
+        opacity:0.8;
+        font-size: 14.5px;
+        color: whitesmoke;
+        font-style: normal;
+        width: 120px;
+  height: 25px;
+     }
+
+     .loadingPicture{
+        position: absolute;
+        top: 500px;
+        left: 410px; 
+        
+
+     }
+     .titleSteepOneStudent{
+
+        color:rgba(9, 9, 88, 0.712);
+        position: absolute;
+        top: 0.5%;
+        right: 2%;
+     }
+     
+    .titleSteepTwoGrade{
+        color:rgba(9, 9, 88, 0.712);
+        position: absolute;
+    left:55%;
+    top:70px;
+
+    }
+
+    .titleFindStudents{
+        font-size:  large;
+        color:rgba(9, 9, 88, 0.712);
+        position: absolute;
+    left:1%;
+    top:5px;
+
+    }
+
+     .panelStudentsMaterialTable{
+        position: absolute;
+        top: 125px;
+        left: 15%;
+        height: 450px;
+        width: 65%;
+        overflow:auto;
+        border-radius: 10%;
+        
+
+     }
+
+     .panelStudentsMaterialTable::-webkit-scrollbar {
+        width: 7px;
+      }
+      
+      /* Track */
+      .panelStudentsMaterialTable::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      /* Handle */
+      .panelStudentsMaterialTable::-webkit-scrollbar-thumb {
+        background:#ddb6aaec
+      }
+      
+      /* Handle on hover */
+      .panelStudentsMaterialTable::-webkit-scrollbar-thumb:hover {
+        background:#ddb6aaec 
+      }
+    
+
+    .conteinerPanels{
+        height: 90%;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .panelShowStudentsContainer{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .gotoNewUserPanel{
+        position: absolute;
+        top: 2%;
+        left: 95%;
+    }
+
+    .divShiftHelpNew{
+        position: absolute;
+        left:87%;
+    top:8%;
+        background-color: grey ;
+        opacity:0.8;
+        font-size: 14.5px;
+        color: whitesmoke;
+        font-style: normal;
+        width: 88px;
+  height: 25px;
+     }
+
+    .gotoNewUserPanel:hover{
+        cursor: pointer;
+    }
+    .PanelShowStudents{
+
+        height: 600px;
+        width: 70%;
+        position: absolute;
+        top: 15px;
+        left: 15%;
+        border: 1px solid;
+        border-color: rgb(145, 184, 145);
+        background-color: rgb(245, 229, 229);
+
+    }
+
+.newStudent{
+
+    height: 550px;
+    width: 450px;
+    position: absolute;
+    top: 15px;
+    left: 35%;
+    border: 1px solid;
+    border-color: rgb(145, 184, 145);
+    background-color: rgb(245, 229, 229);
+    
+}
+
+.newStudentTwo{
+
+    height: 550px;
+    width: 850px;
+    position: absolute;
+    top: 15px;
+    left: 17%;
+    border: 1px solid;
+    border-color: rgb(145, 184, 145);
+    background-color: rgb(245, 229, 229);
+    
+}
+.conteinerNewStudent{
+    height: 100%;
+    width: 100%;
+    position: relative;
+   
+}
+
+.divPicture{
+
+    height: 200px;
+    width: 190px;
+    position: absolute;
+    top: 50px;
+    left: 125px;
+    border: 2px ;
+    
+    
+   
+    overflow:hidden;
+
+}
+
+.divGrade{
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 2px ;
+    
+   border-right: 2px solid;
+   border-color: rgb(250, 172, 163);
+    overflow:hidden;
+
+}
+.divTutor{
+    height: 100%;
+    width: 49.5%;
+    position: absolute;
+    top: 0px;
+    left: 50.5%;
+   
+    border-left: 2px solid;
+   border-color: rgb(250, 172, 163);
+    
+    
+   
+    overflow:hidden;
+
+}
+
+.LabelUpload{
+    color:red
+}
+
+.LabelUpload:hover{
+
+    cursor: pointer;
+}
+
+.textBoxStudent{
+  
+    background: transparent;
+    border: 0.3px solid;
+    border-color: rgb(211, 211, 211);
+    width:240px;
+    height:18px;
+    font-size: medium;
+    color: rgb(141, 141, 141);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+
+.textNewUser{
+  
+    background: transparent;
+  
+    width:550px;
+    height:35px;
+    font-size: large;
+    font-weight: 500;
+    color: rgb(128, 7, 7);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    
+}
+
+.textBoxStudent:hover{
+border-color: rgb(90, 90, 90);
+
+}
+.textBoxStudent:focus{
+    outline: none;
+}
+.newId{
+
+    height: 55px;
+    width: 200px;
+    position: absolute;
+    top: 270px;
+    left: 125px;
+    
+    text-align: left;
+}
+
+
+.MessageAlertId{
+
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 280px;
+    left: 335px;
+    font-size: 12px;
+    color: red;
+    border: 0.5px solid;
+
+}
+
+
+
+
+.newName{
+    height: 55px;
+    width: 200px;
+    position: absolute;
+    top: 335px;
+    left: 125px;
+    text-align: left;
+}
+
+.MessageAlertName{
+
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 345px;
+    left: 335px;
+    font-size: 12px;
+    color: red;
+    border: 0.5px solid;
+
+}
+
+
+.newSurname{
+    height: 55px;
+    width: 200px;
+    position: absolute;
+    top: 405px;
+    left: 125px;
+    text-align: left;
+}
+.MessageAlertSurname{
+
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 415px;
+    left: 335px;
+    font-size: 12px;
+    color: red;
+    border: 0.5px solid;
+
+}
+
+.newDate{
+    height: 55px;
+    width: 200px;
+    position: absolute;
+    top: 475px;
+    left: 125px;
+    text-align: left;
+}
+.MessageAlertSurBday{
+
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    top: 485px;
+    left: 335px;
+    font-size: 12px;
+    color: red;
+    border: 0.5px solid;
+
+}
+
+
+.next{
+
+    position: absolute;
+        top: 510px;
+        left: 410px; 
+}
+.next:hover{
+    cursor: pointer;
+}
+
+.containMaterialTable{
+
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.GradesMaterialTable{
+    position: absolute;
+    left:15%;
+    top:100px;
+    height: 350px;
+    width: 300px;
+    overflow:auto;
+    border-radius: 12%;
+   
+
+}
+
+.GradesMaterialTable::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .GradesMaterialTable::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .GradesMaterialTable::-webkit-scrollbar-thumb {
+    background: rgb(185, 177, 176);
+  }
+  
+  /* Handle on hover */
+  .GradesMaterialTable::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+.goBack{
+
+    position: absolute;
+    left:2%;
+    top:92%;
+   }
+ 
+.goBack:hover{
+
+    cursor: pointer;
+}
+
+.ShiftAllStudents{
+    position: absolute;
+    left:2%;
+    top:2%;
+    }
+
+    .divShiftHelp{
+        position: absolute;
+        left:2%;
+    top:9%;
+        background-color: grey ;
+        opacity:0.8;
+        font-size: 14.5px;
+        color: whitesmoke;
+        font-style: normal;
+        width: 88px;
+  height: 25px;
+     }
+
+.ShiftAllStudents:hover{
+    cursor: pointer;
+}
+
+.SaveUser{
+
+    position: absolute;
+    left:89%;
+    top:91%;
+    height: 50px;
+    width: 100px;
+   
+   }
+   .SaveButton{
+    background: transparent;
+    border: 2px solid;
+    border-color: rgba(146, 145, 144, 0.849);
+    border-radius: 25%;
+    font-size: medium;
+    color: rgba(107, 107, 107, 0.849);
+    height: 38px;
+    width: 60px;
+   }
+   .SaveButton:hover{
+       cursor: pointer;
+       border: 3px solid;
+       border-color: rgba(20, 11, 0, 0.849);
+       color: rgba(20, 11, 0, 0.849) ;
+       
+    }
+    SaveButton:focus{
+        cursor: pointer;
+        border: 4px solid;
+        border-color: rgba(20, 11, 0, 0.849);
+        color: rgba(20, 11, 0, 0.849) ;
+     }
+     
+
+.StudentSaved{
+    position: absolute;
+    left:35%;
+    top:35%;
+
+}
+
+.ButtonSave{
+  
+    background: transparent;
+    border: 0.3px solid;
+    border-color: rgb(189, 187, 187);
+    width:100px;
+    height:18px;
+    font-size: medium;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+.textBox:hover{
+border-color: white;
+
+}
+.textBox:focus{
+    border-color: white;
+}
+

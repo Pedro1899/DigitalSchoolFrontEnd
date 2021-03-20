@@ -1,0 +1,28 @@
+.PanelStudentNewNotes{
+
+    position:absolute;
+     top:5%;
+      left:42%;
+       width:57%;
+        height:85%; 
+        overflow:auto;
+}
+
+.PanelStudentNewNotes::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .PanelStudentNewNotes::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .PanelStudentNewNotes::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .PanelStudentNewNotes::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }

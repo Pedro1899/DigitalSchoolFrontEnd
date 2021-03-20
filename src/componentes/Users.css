@@ -1,0 +1,454 @@
+.PanelUsers{
+    
+    width:92%;
+    height:585px;
+    border: 1px solid;
+    border-color: rgb(231, 226, 226);
+    margin-left: 80px;
+    background-color: rgb(255, 255, 255);
+    overflow: hide;
+}
+.containerPanel{
+    width:100%;
+    height:100%;
+   position: relative;
+}
+.UsersTeacher{
+position: absolute;
+top:5%;
+width:100%;
+height:95%;
+overflow: auto;
+}
+
+.navPanelUsers{
+    position: absolute;
+top:0%;
+width:100%;
+height:5%;
+}
+
+.ContainerNavPanel{
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.shiftTutorUser{
+    position: absolute;
+    top:5%;
+    left: 0.5%;
+    width:2%;
+    height:94%;
+    padding-top: 8px;
+  
+}
+.shiftTutorUser:hover{
+    cursor: pointer;
+}
+
+.TitleNavTutorUser{
+    position: absolute;
+    top:0%;
+    left: 40%;
+    width:20%;
+    height:95%;
+    
+    color: rgb(144, 144, 202);
+    font-size: 21px;
+    font-weight: 600;
+
+}
+
+
+.conteiner{
+    width:100%;
+    height:60px;
+   
+    position: relative;
+
+}
+
+.LastTry{
+
+    position: absolute;
+    top: 0; left: 0;
+}
+
+
+.detailPanel{
+    display: table;
+    height: 250px;
+    width: 100%;
+   
+    
+}
+
+.detailPanelStudent{
+    display: table;
+    height: 280px;
+    width: 100%;
+   
+    
+}
+
+.detailPanelRow{
+display: table-row;
+width: 100%;
+height: 100%;
+
+}
+/*parte del panel de informacion en donde se encuentra la fotografia. */
+.DivPicturePanelDetail{
+    height: 80%;
+    width: 100%;
+    background-color: rgba(244, 253, 246, 0.836);
+    justify-items: center;
+    padding-left: 27%;
+    padding-top: 8%;
+   
+}
+/* parte del panel de info en donde se encuentra el nombre de la persona seleccionada  */
+.DivNameInfoPanelDetail{
+    height: 20%;
+    width: 100%;
+    background-color: rgba(244, 253, 246, 0.836);
+    text-align: center;
+    font-size: 21px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(70, 5, 5, 0.897);
+    font-weight: bold;
+    
+}
+
+
+.imagen{
+    height: 90px;
+    width: 90px;
+    
+    
+
+
+}
+
+
+.titleCourseCell{
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    text-align:center ;
+    padding:10px;
+    letter-spacing: 18px;
+    font-size: 20px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(141, 143, 150, 0.897);
+    font-weight: bold;
+   
+   
+}
+
+.textDetailCourses{
+
+   
+    border-bottom: 1px solid red;
+    width: 50%;
+
+}
+
+.DetailCoursesCell{
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 20%; left: 0;
+    overflow: auto;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(141, 143, 150, 0.897);
+    font-weight: lighter;
+    
+    
+}
+.DetailStudentCell{
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 20%; left: 0;
+    overflow: auto;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(141, 143, 150, 0.897);
+    font-weight: lighter;
+    
+    
+}
+.CourseActivity{
+    height: 20px;
+    width: 100px;
+   
+    margin-left: 50px;
+    margin-top:5pxs;
+    border-color: rgba(138, 131, 131, 0.568);
+    font-size: 17px;
+
+}
+.DetailActivityCell{    height: 80%;
+    width: 100%;
+    position: absolute;
+    top: 20%; left: 0;
+    overflow: auto;
+    font-size: 15px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(141, 143, 150, 0.897);
+    font-weight: lighter;
+    text-align: center;
+}
+
+.detailPanelRowCellPicture{
+    display: table-cell;
+    width: 25%;
+    height: 100%;
+    
+   overflow:hidden;
+    }
+
+
+
+.detailPanelRowCellCourses{
+        display: table-cell;
+        width: 30%;
+        height: 100%;
+        background-color: rgba(245, 242, 253, 0.897);
+       position: relative;
+        
+        }
+
+        .detailPanelRowCellChildren{
+            display: table-cell;
+            width: 70%;
+            height: 100%;
+            background-color: rgba(248, 226, 226, 0.925);
+           position: relative;
+            
+            }
+    
+        .detailPanelRowCellActivities{
+            display: table-cell;
+            width: 45%;
+        height: 100%;
+            position: relative;
+            
+            background-color: rgba(248, 226, 226, 0.925);
+            
+            }
+        
+ 
+
+   
+
+ 
+   
+
+
+.configMenuPicture{
+
+    width:35px;
+    height:35px;
+    
+    margin-top: 0px ;
+    margin-left: -10px ;
+    padding-top: 5px;
+    background-color: transparent;
+    }
+.configMenuPicture:hover{
+
+  
+    cursor: pointer;
+    border-radius: 40%;
+}
+.divNewUser{
+    background: transparent;
+    background-image: url("/images/teacheres.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    width:100%;
+    height:100%;
+    margin-left: 150px;
+    padding-top: 30px;
+    align-items: flex-end;
+    
+    
+    }
+
+.DivNewUserElements{
+    position: fixed;
+    left: 600px;
+    width:500px;
+    height:300px;
+    font-size: small;
+    color: rgb(214, 214, 214);
+    display: block;
+   
+    display: block;
+    text-align: left;
+
+}
+.textBox{
+  
+    background: transparent;
+    border: 0.3px solid;
+    border-color: rgb(189, 187, 187);
+    width:400px;
+    height:18px;
+    font-size: medium;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
+}
+.textBox:hover{
+border-color: white;
+
+}
+.textBox:focus{
+    border-color: white;
+}
+
+.buttonUsers{
+   
+    background: transparent;
+    border: 0.5px solid;
+    border-color: white;
+    color: white;
+    width:70px;
+    height:35px;
+    font-weight: bold;
+}
+
+.buttonUsers:hover{
+
+    background-color: white;
+    color: gray;
+    border: none;
+    border-radius: 8%;
+    cursor: pointer;
+
+}
+.selectUsers{
+    background: transparent;
+    border: 0.3px solid;
+    border-color: rgb(189, 187, 187);
+    width:400px;
+    height:18px;
+    font-size: small;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.itemActivityRow{
+    position: relative;
+    height: 140px;
+    width:  100%;
+
+}
+.titleActivity{
+    text-decoration: underline;
+
+}
+.titleStudent{
+    text-decoration: underline;
+    
+    font-size: 18px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgba(70, 5, 5, 0.897);
+    font-weight: bold;
+}
+
+.itemActivityRowPicture{
+position: absolute;
+top:0;
+left: 0;
+padding-left: 5px;
+    
+}
+
+.itemAvatarStudent{
+    position: absolute;
+    top:0;
+    left: 150px;
+    align-items: center;
+    padding-left: 150px;
+    border-bottom: 0.5px solid;
+    border-color:  rgba(248, 196, 196, 0.925);
+    border-width: 5px;
+    height: 140px;
+    width:  450px;
+
+        
+    }
+
+.itemActivityRowInformation{
+    position: absolute;
+    top:0;
+    left: 350px;
+   
+    
+    width:230px;
+    height:135px;
+    text-align: justify;
+    padding-left: 8px;
+    
+        
+    }
+
+    .itemStudentRowInformation{
+        position: absolute;
+        top:0;
+        left: 500px;
+       
+        
+        width:230px;
+        height:135px;
+        text-align: justify;
+        padding-left: 8px;
+        
+            
+        }
+.MaestroLabel{
+height: 18px;
+background-color: rgb(149, 236, 17);
+
+}
+
+option{
+background: rgb(175, 174, 174);
+color: black;
+
+}
+
+
+.UsersTeacher::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .UsersTeacher::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .UsersTeacher::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .UsersTeacher::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }

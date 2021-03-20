@@ -1,0 +1,25 @@
+.divStudentsResultGraph{
+    position:absolute;
+     left:35%; top:18%; width:30%; height:80%;   margin-Bottom:4px; overflow:auto;
+}
+
+
+
+.divStudentsResultGraph::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  .divStudentsResultGraph::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .divStudentsResultGraph::-webkit-scrollbar-thumb {
+    background:#9a9b9bec
+  }
+  
+  /* Handle on hover */
+  .divStudentsResultGraph::-webkit-scrollbar-thumb:hover {
+    background: #9a9b9bec 
+  }
