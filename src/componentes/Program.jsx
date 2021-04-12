@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 import {FaSlidersH,FaRegCircle,FaCircle} from 'react-icons/fa'
 import {BsCalendar, BsXCircle, BsFillCircleFill} from 'react-icons/bs'
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { AiOutlineWarning, AiOutlineEye, AiOutlineRightCircle, AiOutlineLeftCircle, AiOutlineDelete}  from 'react-icons/ai'
 import {BsCloudUpload,BsFillPlusSquareFill, BsCheck, BsX} from 'react-icons/bs'
 import {GrSend, GrStatusGood} from 'react-icons/gr'
@@ -927,6 +927,7 @@ render(){return(
 
 
     <div className="containerNavPanelAct">
+  
         <div className="NewActivity" onClick={this.newActivityPanel}  ><BsFillPlusSquareFill size="1.5rem"></BsFillPlusSquareFill></div>
         <div className="showCalendar" onClick={this.refreshActivities}><BsCalendar size="1.5rem" ></BsCalendar></div>
         <div className="showSlide"><FaSlidersH size="1.5rem" onClick={()=>{
@@ -957,29 +958,15 @@ render(){return(
 
 <div className="showSlideActivitiesPanel">
                         {/* PANEL DE INICIO ACTIVIDADES {VISUALIZACION} */}
-{ this.state.ShowSlidePanel && <div className="containerSlidePanelAct">
+{ this.state.ShowSlidePanel && 
 
-<div className="pictureActivity"></div>
-<div className="descriptionActivity"></div>
-<div className="calendarActivity"></div>
+<div className="containerSlidePanelAct">
+
+
 {this.state.OffActivities && <div><img src='/images/empryActivities.png' alt='' style={{height: "250px", width: '250px', paddingTop: '125PX', opacity:'0.75'}} ></img>
 <p style={{fontSize:'18px', color:'black', opacity:'0.3'}} >There is not activities</p></div>}
-{!this.state.OffActivities &&<div className='NextActivity' onClick={this.handleNextActivity}  >
-<AiOutlineRightCircle size="2rem"  ></AiOutlineRightCircle></div> }
-{ !this.state.OffActivities && <UpShowCounter
-                                   Actual={this.state.ActivityCounter} 
-                                  ListCourses={this.state.ListActivitiesOfThisTeacher}
-                                  SetbgColor ={this.state.bgColorActivity}
-></UpShowCounter> }
 
-{ !this.state.OffActivities && <UpAdmin
-                                   picture={this.state.pictureAdminOfThisActivity} 
-                                  name={this.state.nameAdminOfThisActivity}
-                                  surname ={this.state.surnameAdminOfThisActivity}
-                                  language={this.state.language}
-></UpAdmin> }
-{!this.state.OffActivities &&<div className='PrevActivity' onClick={this.handlePreActivity} >
- <AiOutlineLeftCircle size="2rem"  ></AiOutlineLeftCircle></div>}
+
 {!this.state.OffActivities && <UPActivity Title ={this.state.TitleThisActivity}
                                           Description ={this.state.DescriptionThisActivity}
                                           Photo ={this.state.photoThisActivity}
@@ -996,46 +983,110 @@ render(){return(
                                 ></UPActivity>
 
                                           }
-</div> 
+
+
+
+{ !this.state.OffActivities && <UpAdmin
+                                   picture={this.state.pictureAdminOfThisActivity} 
+                                  name={this.state.nameAdminOfThisActivity}
+                                  surname ={this.state.surnameAdminOfThisActivity}
+                                  language={this.state.language}
+></UpAdmin> }
+  
+
+  {!this.state.OffActivities &&<div className='NextActivity' onClick={this.handleNextActivity}  >
+<AiOutlineRightCircle size="2rem"  ></AiOutlineRightCircle></div> }
+
+{ !this.state.OffActivities && <UpShowCounter
+                                   Actual={this.state.ActivityCounter} 
+                                  ListCourses={this.state.ListActivitiesOfThisTeacher}
+                                  SetbgColor ={this.state.bgColorActivity}
+></UpShowCounter> }
+{!this.state.OffActivities &&<div className='PrevActivity' onClick={this.handlePreActivity} >
+ <AiOutlineLeftCircle size="2rem"  ></AiOutlineLeftCircle></div>}
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
 
 }
 
                             {/* PANEL DE CREAR ACTIVIDADES */}
 { this.state.ShowNewActivityPanel &&  <div className="containerNewPanelAct">
+
+<div class="container">
+  <div class="row">
+<div class="col-lg-7 col-11 " >
 <div className="SetpictureActivity">
-{this.state.flagUpPicture && <img src={this.state.PictureActivityFilePreview} alt='Empty' style={{maxHeight:'100%', maxWidth:'100%', borderRadius:'5%'}} ></img>}
+{this.state.flagUpPicture && <img src={this.state.PictureActivityFilePreview} alt='Empty'
+ style={{height:'100%', width:'100%', borderRadius:'5%'}} ></img>}
 {!this.state.flagUpPicture && <img src='/images/ActivityPicture3.png' alt='Empty' style={{height: "190px", width: '220px', paddingTop: '35PX', opacity:'0.50'}} ></img>}   
 </div>
+</div>
+<div class="col-lg-1 col-1 pl-0  align-self-end">
+
 <input type="file" name="file" id="file" className="inputfile" accept=".jpg,.jpeg,.png, .gif" onChange={this.fileSelectedHandler} />
-             <div className="DivUploadPicActivity">
+             
                    <label htmlFor="file" className="LabelUpload"
                          onMouseOver={()=>{this.setState({helpMouseOverUploadPicture:true})}}
                          onMouseOut={()=>{this.setState({helpMouseOverUploadPicture:false})}}>
                             <BsCloudUpload size="2rem" color="gray"></BsCloudUpload>
                     </label>
                    
-              </div>
-              {this.state.alertPicture && <div className="MessageAlertPicture">FAIL UPLOAD</div>}
-             {this.state.helpMouseOverUploadPicture && <div className="DivUploadHelpActivity">choose a picture</div>}
-<div className="SetTitleActivity"><input className="textBoxStudent"  id="Utitle" name="titleNewAc" type='text' value={this.state.titleNewAc} onChange={this.Handleİnpt} onFocus={this.HandleFocus} /></div>
-<div className="SetdescriptionActivity"><input className="textBoxStudent"  id="UDescription" name="DescriptionNewAc" type='text' value={this.state.DescriptionNewAc} onChange={this.Handleİnpt} onFocus={this.HandleFocus}/></div>
-<div className="SetcalendarActivity">
-<GetDate setDate={this.state.dateNewActivity} handleDate ={this.NewActivityDate}
-        />
+              
 </div>
-<div className="SetSaveActivity" ><button className="SaveActivityButton" onClick={this.SaveActivity}   > save</button></div>
-<div className="SetCategory" ><UpSelect Category={this.state.category} handleCategory ={this.handleChangeSelect}  ></UpSelect></div>
-{this.state.loadingSave &&  <div style={{height: "50px", width: '50px', position:"absolute", left:  "80%",top: "44.5%"}}><img alt='Empty ' style={{height: "50px", width: '50px'}} src='/images/loading.gif'></img></div> }
-{this.state.AlertMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "74.5%",top: "62.5%", backgroundColor:'#F6F7DF', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
-{this.state.SuccessMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "79%",top: "44.5%", backgroundColor:'#CBF5D0', border:'1px',
- paddingTop:'5px', borderRadius:'5%' }}><GrStatusGood size='1.2rem' /> &nbsp; &nbsp;Activity saved</div>}
+<div class="col-lg-4 col-12 ">
+<div class="container">
+<div class="row " >
+  <div class="col-lg-12  col-12 pt-3 pl-0">
+<input className="textBoxStudent"  id="Utitle" name="titleNewAc" type='text' value={this.state.titleNewAc} onChange={this.Handleİnpt} onFocus={this.HandleFocus} />
 
-{this.state.FailMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "79%",top: "44.5%", backgroundColor:'#FB9673 ', border:'1px',
- paddingTop:'5px', borderRadius:'5%' }}><BsXCircle size='1.2rem' /> &nbsp; &nbsp;Ops.. Error</div>}
+  </div>
+
+  <div class="col-lg-12 col-12 pt-3 pl-0">
+  <input className="textBoxStudent"  id="UDescription" name="DescriptionNewAc" type='text' value={this.state.DescriptionNewAc} onChange={this.Handleİnpt} onFocus={this.HandleFocus}/>
+
+  </div>
+ 
+  <div class="col-lg-6  col-8 pt-4 pl-0">
+  <GetDate setDate={this.state.dateNewActivity} handleDate ={this.NewActivityDate}/>
+  </div>
+  <div class="col-lg-6 col-4 pt-4 pl-0">
+  <UpSelect Category={this.state.category} handleCategory ={this.handleChangeSelect}  ></UpSelect>
+  </div>
+
+  <div class="col-lg-12 col-8 pt-2 justify-content-end" style={{paddingLeft:'0px'}}>
+  <button className="SaveActivityButton" onClick={this.SaveActivity}   > save</button>
+  </div>
+  <div class="col-lg-12 col-4  " style={{paddingLeft:'0px'}}>
+  {this.state.loadingSave &&  <div style={{height: "50px", width: '50px'}}>
+  <img alt='Empty ' style={{height: "50px", width: '50px'}} src='/images/loading.gif'></img>
+  </div> }
+  </div>
+
+ 
+</div>
+</div>
 
 
- {this.state.Admin && <div className="SetCoursesActivity"> 
+
+
+              
+</div>
+
+</div>
+
+<div class="row">
+{this.state.Admin && <div className="col-lg-3 col-12 mt-3">
+<div className="SetCoursesActivity"> 
 <MaterialTable title="" 
         data = {this.state.ListTeachers}
         columns ={[{title: " ", render: rowData => <UpAvatar  name={rowData.name}  picture={rowData.picture} ></UpAvatar>},
@@ -1063,8 +1114,16 @@ render(){return(
            
                    onRowClick={((evt, selectedRow) => this.changeSelectionTeacher(selectedRow))}
                 ></MaterialTable>
-</div> } 
-<div className={(this.state.Admin)?"SetCoursesActivityCourses":"SetCoursesActivityCoursesTeach" }    >
+</div> 
+
+
+</div> }
+<div className="col-lg-1 col-1"></div>
+
+<div className="col-lg-3 col-12 mt-3" >
+
+
+<div className="SetCoursesActivity">
 {this.state.CoursesFlag && <MaterialTable title="" 
         data = {this.state.ListCourses}
         columns ={[  {title : 'id_Course', field : 'id_Course', hidden:true}, {title : 'idGrade', field : 'idGrade', hidden:true},
@@ -1094,13 +1153,18 @@ render(){return(
              onRowClick={((evt, selectedRow) => this.changeSelectionCourse(selectedRow))}
 
                 ></MaterialTable> }
-{!this.state.CoursesFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "75px", width: '75px', paddingTop: '50PX', opacity:'0.60'}} ></img>
+{!this.state.CoursesFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "25%", width: '25%', paddingTop: '50PX', opacity:'0.60'}} ></img>
 <p style={{fontSize:'12px', color:'black', opacity:'0.3'}} >choose a teacher with courses</p></div> }
 </div>
+</div>
 
-{this.state.buttonSend &&  <div className ={(this.state.Admin)?"AssignmentCourseActivity":"AssignmentCourseActivityTeach" } onClick={this.updateCoursesSelection} ><GrSend size="1.8rem"></GrSend></div>}
-<div className={(this.state.Admin)?"SetListCoursesforActivity":"SetListCoursesforActivityTeach" }    >
+<div className="col-lg-1 col-12  align-self-center ">
+{this.state.buttonSend &&  <div className ="AssignmentCourseActivity" onClick={this.updateCoursesSelection} ><GrSend size="1.8rem"></GrSend></div>}
 
+</div>
+
+<div className="col-lg-3 col-12 mt-3" >
+<div className="SetCoursesActivity">
 {this.state.CoursesAssFlag && <MaterialTable title="" 
         data = {this.state.ListCoursesAss}
         columns ={[  {title : 'id_Course', field : 'id_Course', hidden:true}, {title : 'idGrade', field : 'idGrade', hidden:true},
@@ -1129,10 +1193,45 @@ render(){return(
               }}
                
                 ></MaterialTable> }
-{!this.state.CoursesAssFlag && <div><img  alt='' src='/images/ListCoursesActivities.png'  style={{height: "75px", width: '75px', paddingTop: '50PX', opacity:'0.50'}} ></img>
-<p style={{fontSize:'12px', color:'black', opacity:'0.3'}} >Curses List</p></div> }
+                {!this.state.CoursesAssFlag && 
+<div><img  alt='' src='/images/ListCoursesActivities.png'  style={{height: "25%", width: '25%', paddingTop: '15%', opacity:'0.50'}} ></img>
+<p style={{fontSize:'12px', color:'black', opacity:'0.3'}} >Curses List</p></div>}
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
 </div>
 </div>
+
+
+
+
+              {this.state.alertPicture && <div className="MessageAlertPicture">FAIL UPLOAD</div>}
+           
+
+{this.state.AlertMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "45.5%",top: "40.5%", backgroundColor:'#F6F7DF', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
+{this.state.SuccessMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "45",top: "40.5%", backgroundColor:'#CBF5D0', border:'1px',
+ paddingTop:'5px', borderRadius:'5%' }}><GrStatusGood size='1.2rem' /> &nbsp; &nbsp;Activity saved</div>}
+
+{this.state.FailMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "45%",top: "40.5%", backgroundColor:'#FB9673 ', border:'1px',
+ paddingTop:'5px', borderRadius:'5%' }}><BsXCircle size='1.2rem' /> &nbsp; &nbsp;Ops.. Error</div>}
+
+
+ 
+
+
+
+</div>
+
 }
 
                             {/* SHOW ACTIVITY AND DELETE THEM */}
@@ -1342,6 +1441,7 @@ return(
       inputPlaceholder="Select a date" // placeholder
       formatInputText={props.formatInputValue} // format value
       inputClassName="my-custom-input" // custom class
+      calendarPopperPosition="bottom"
       shouldHighlightWeekends
     />
          
@@ -1722,9 +1822,69 @@ default:
 
   return (
   
-<div style={{position:'absolute', top:'4%', left:'2%', width:'96%', height:'86%', borderBottom:'1px', opacity:opacy,textAlign:'left', 
-backgroundColor:props.SetbgColor, borderRadius:'7%' }}>
+<div className="panelShowActivity" style={{
+backgroundColor:props.SetbgColor, borderRadius:'5%' }}>
 
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5 col-12 pl-4 pt-2 pb-3 text-left" style={{fontSize:'35px'}}>
+    {props.Title}
+    </div>
+    <div class="col-lg-7 col-12 pt-3 pb-3 text-left" style={{ fontSize:'18px', paddingTop:'16px', color:'#7E7E7E' }}> 
+     {props.Description}
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-5 col-12"  > 
+     <div className="MainPanelPictureActivity"  >
+    
+    {validatePicture && <img alt='' src={props.Photo}  style={{height: "100%", width: '100%', borderRadius:'7%'}} ></img>}
+    {!validatePicture && <img alt='' src='/images/ActivityPicture3.png' style={{height: "100%", width: '100%',  opacity:'0.5'}} ></img>}
+    
+    </div> 
+    </div>
+    
+    <div class="col-lg-4 col-12"> 
+    <div style={{  borderRadius:'10%', overflow:'block' }} >
+  <Calendar
+      value={ {
+        year: year,
+        month: props.month,
+        day: props.day,
+      }}
+      
+      locale={LanguageCalendar}
+     
+      shouldHighlightWeekends
+    />
+  </div>
+    </div>
+    
+    <div class="col-lg-3 col-12"  > 
+    <div style={{ borderRadius:'10%', paddingLeft:'15px', paddingTop:'15px', overflow:'auto' }} >
+
+
+  
+{
+  props.Courses.map((item,i)=>
+    <div  key={i} style={{width:'170px', height:'30px', paddingTop:'8px', fontSize:'15px', backgroundColor:bgColorCourses, marginTop:'5px', borderRadius:'6%'}}>
+&nbsp;&nbsp;<BsFillCircleFill size='0.6rem'></BsFillCircleFill>&nbsp; {item.grade +' '+ item.lesson}
+    </div>
+
+ 
+  )
+}
+
+  </div>
+    </div>
+  </div>
+
+
+ 
+</div>
+
+{/*
  <div style={{position:'relative',  width:'100%', height:'100%'}}>
   <div style={{position:'absolute', top:'8%', left:'3.5%', width:'30%', height:'10%',textAlign:'right', fontSize:'30px' }} >
   {props.Title}
@@ -1773,7 +1933,7 @@ backgroundColor:props.SetbgColor, borderRadius:'7%' }}>
   </div>
 
 
- </div>
+ </div> */}
 
 </div>
 
@@ -1909,21 +2069,35 @@ return(<img alt='' src='/images/ActivityPicture3.png' style={{width:'175px', hei
 
 function UpShowCounter(props){
 
-  let position=3.5
+  let position=5
 let key=0;
 return (
+  <div className="contadordeActividades">
+
+
+  <div class="container">
+<div class="row"  >
+
+
+
+ {
 props.ListCourses.map((item, index)=>{
   position=position+2
 key=key+1
   if(index===props.Actual){
-    return(<div key={key} style={{position:'absolute',  left:`${position}%`, top:'93.1%'}} ><FaCircle size='0.95rem' color= '#7586DC' ></FaCircle></div>)
+    return(<div key={key} class="col-lg-1 col-1 pl-1"  ><FaCircle size='0.95rem' color= '#7586DC' ></FaCircle></div>)
 
   }else{
-    return(<div key={key} style={{position:'absolute', left:`${position}%`, top:'93%'}} ><FaRegCircle size='0.85rem' color='#DAE1F9 '></FaRegCircle></div>)
+    return(<div key={key}class="col-lg-1 col-1 pl-1" ><FaRegCircle size='0.85rem' color='#DAE1F9 '></FaRegCircle></div>)
 
   }
  
 })
+
+ }
+</div>
+</div>
+</div>
 )
 
 
@@ -1962,14 +2136,30 @@ switch (props.language) {
  
 
   if(props.picture===null||props.picture==='null'||props.picture==='n'){
-    return (<div  style={{position:'absolute',  top:'93%', width:'30%', right:'0%', opacity:'0.53', fontStyle:'oblique',}} > 
+
+    return (<div  style={{position:'absolute',  top:'93%', width:'30%', right:'0%', opacity:'0.53', fontStyle:'oblique'}} > 
    { language+' '+ props.name + ' ' +props.surname}  </div>)
   }else{
-    return (<div  style={{position:'absolute', right:'0%', top:'91%', width:'40%', height:'8%'}} >
-        <div style={{position:'relative', with:'100%', height:'100%' }}>
+    return (<div  style={{position:'absolute', right:'2%', top:'89%', width:'55%', height:'10%'}} >
+      
+      <div class="container">
+        <div class="row">
+        <div class="col-lg-5 col-0">
+          
+          </div>
+          <div class="col-lg-6 col-9 pr-1 pt-2 text-end"  >
+            { language +' ' + props.name}
+          </div>
+          <div class="col-lg-1 col-3 pl-1 pt-0 text-start"><UpAvatar picture={props.picture} ></UpAvatar>
+
+        
+          </div>
+        </div>
+      </div>
+       { /*<div style={{position:'relative', with:'100%', height:'100%' }}>
           <div style={{position:'absolute', with:'60%', height:'90%', left:'50%' }} > <UpAvatar picture={props.picture} ></UpAvatar></div>
           <div style={{position:'absolute', with:'40%', height:'90%', left:'62%', paddingTop:'10px', opacity:'0.53', fontStyle:'oblique', marginRight:'2px' }} >  { language +' ' + props.name} </div>
-          </div>    </div>)
+          </div> */ }  </div>)
   }
   
 }

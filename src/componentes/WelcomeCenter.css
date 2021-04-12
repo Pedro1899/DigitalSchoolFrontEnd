@@ -18,7 +18,7 @@
 
 .sidebar {
     height: 100%;
-    width: 60px;
+    width: 50px;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -300,9 +300,77 @@ z-index: 1;
   height: 25px;
 }
 
+.divLanguage{position:absolute;
+   left:15%;
+    top:90% ; width:4%;
+     height:4%;
+     z-index:10; cursor:pointer}
 
   @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
+
+  
+ 
     .sidebar a {font-size: 18px;}
   }
 
+
+  @media only screen and (max-width: 479px) {
+
+    .sidebar {
+      height: 60px;
+      width: 100%;
+      position: fixed;
+      z-index: 10;
+      top: 93%;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      
+      padding-top: 10px;
+    }
+
+    .divLanguage {
+
+      position:absolute; 
+      left:'15%'; top:90%;
+      width:0%; 
+      height:0%;
+      
+      overflow: hidden;
+      
+      
+    
+    }
+
+    .welcome{
+
+
+      padding-top: 20px;
+      overflow: scroll;
+      
+    }
+    
+    .Welcome{
+    
+      height: 100vh;
+    
+     overflow: scroll;
+      
+    }
+    }
+  
+@media only screen and (max-width: 479px) {
+  /* Crear nuevo estudiante*/
+  .title{
+
+    font-size: 40px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: rgb(236, 163, 129);
+   text-align: left;
+    letter-spacing: 1.3px;
+    font-weight: 1000;
+    
+  }  
+  }
+  

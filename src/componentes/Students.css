@@ -5,7 +5,7 @@
 
     margin-top: -40px;
     overflow: hidden;
-   
+  
     }
 
     .inputfile{
@@ -21,7 +21,7 @@
        
      .DivUpload{
         position: absolute;
-        top: 200px;
+        top: 180px;
         left: 320px;
 
      }
@@ -50,13 +50,7 @@
   height: 25px;
      }
 
-     .loadingPicture{
-        position: absolute;
-        top: 500px;
-        left: 410px; 
-        
-
-     }
+ 
      .titleSteepOneStudent{
 
         color:rgba(9, 9, 88, 0.712);
@@ -67,9 +61,8 @@
      
     .titleSteepTwoGrade{
         color:rgba(9, 9, 88, 0.712);
-        position: absolute;
-    left:55%;
-    top:70px;
+        position: relative;
+        
 
     }
 
@@ -115,7 +108,7 @@
     
 
     .conteinerPanels{
-        height: 90%;
+        height: 100%;
         width: 100%;
         position: relative;
 
@@ -155,7 +148,6 @@
         position: absolute;
         top: 15px;
         left: 15%;
-        border: 1px solid;
         border-color: rgb(145, 184, 145);
         background-color: rgb(245, 229, 229);
 
@@ -163,28 +155,29 @@
 
 .newStudent{
 
-    height: 550px;
+    height: 520px;
     width: 450px;
     position: absolute;
     top: 15px;
     left: 35%;
-    border: 1px solid;
-    border-color: rgb(145, 184, 145);
+
+   
     background-color: rgb(245, 229, 229);
     
 }
 
 .newStudentTwo{
 
-    height: 550px;
+    height: 500px;
     width: 850px;
     position: absolute;
     top: 15px;
     left: 17%;
     border: 1px solid;
-    border-color: rgb(145, 184, 145);
+    border-color: rgb(208, 203, 180);
     background-color: rgb(245, 229, 229);
-    
+    display: flex;
+   align-items: center;
 }
 .conteinerNewStudent{
     height: 100%;
@@ -193,13 +186,15 @@
    
 }
 
+.centerBlock {
+    display: table;
+    margin: auto;
+  }
 .divPicture{
 
     height: 200px;
     width: 190px;
-    position: absolute;
-    top: 50px;
-    left: 125px;
+  
     border: 2px ;
     
     
@@ -288,9 +283,8 @@ border-color: rgb(90, 90, 90);
 
     height: 55px;
     width: 200px;
-    position: absolute;
-    top: 270px;
-    left: 125px;
+    position: relative;
+    
     
     text-align: left;
 }
@@ -315,9 +309,8 @@ border-color: rgb(90, 90, 90);
 .newName{
     height: 55px;
     width: 200px;
-    position: absolute;
-    top: 335px;
-    left: 125px;
+    position: relative;
+
     text-align: left;
 }
 
@@ -338,9 +331,8 @@ border-color: rgb(90, 90, 90);
 .newSurname{
     height: 55px;
     width: 200px;
-    position: absolute;
-    top: 405px;
-    left: 125px;
+    position: relative;
+   
     text-align: left;
 }
 .MessageAlertSurname{
@@ -359,9 +351,8 @@ border-color: rgb(90, 90, 90);
 .newDate{
     height: 55px;
     width: 200px;
-    position: absolute;
-    top: 475px;
-    left: 125px;
+    position: relative;
+ 
     text-align: left;
 }
 .MessageAlertSurBday{
@@ -380,9 +371,7 @@ border-color: rgb(90, 90, 90);
 
 .next{
 
-    position: absolute;
-        top: 510px;
-        left: 410px; 
+    float: right;
 }
 .next:hover{
     cursor: pointer;
@@ -397,9 +386,7 @@ border-color: rgb(90, 90, 90);
 }
 
 .GradesMaterialTable{
-    position: absolute;
-    left:15%;
-    top:100px;
+    position:relative;
     height: 350px;
     width: 300px;
     overflow:auto;
@@ -499,8 +486,8 @@ border-color: rgb(90, 90, 90);
 
 .StudentSaved{
     position: absolute;
-    left:35%;
-    top:35%;
+    left:25%;
+    top:50%;
 
 }
 
@@ -526,3 +513,121 @@ border-color: white;
     border-color: white;
 }
 
+.ConfigStudentButton{
+    position: absolute;
+    left:2%;
+    top:2%;
+     opacity:0.7; 
+     cursor:pointer
+}
+
+.TutorDiv{
+
+    text-align: center;
+    padding-left: 50px;
+    border-left: 1px solid;
+    border-color: rgb(184, 86, 11);
+    border-width: thick;
+}
+
+
+.GDiv{
+    position:relative;
+    text-align: center;
+    padding-left: 25px;
+ 
+ 
+}
+
+@media only screen and (max-width: 479px) {
+    /* Crear nuevo estudiante*/
+
+    .ConfigStudentButton{
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+    }
+    .newStudent{
+
+        height: 495px;
+        width: 381px;
+        position: absolute;
+        top: 0px;
+        left: 10px;
+    
+        border-color: rgb(237, 230, 201);
+        background-color: rgb(245, 229, 229);
+                
+    }
+
+    .PanelStudents{
+        height: 505px;
+        width: 393;
+        margin-left: 8px;
+    
+        margin-top: -60px;
+        overflow: auto;
+        
+      
+        }
+
+        .newStudentTwo{
+
+            height: 1000px;
+        width: 383px;
+        position: absolute;
+        top: 10px;
+        left: 7px;
+            border: 1px solid;
+            border-color: rgb(216, 209, 158);
+            background-color: rgb(245, 229, 229);
+            overflow: hidden;
+            
+           
+        }
+
+        .TutorDiv{
+            position:relative;
+           width: 350px;
+           height: 450PX;
+            text-align: center;
+            margin-top: 0px;
+            padding-top: 35px;
+            padding-left:5px;
+            border-left: none;
+            border-top: 1px solid;
+            border-color: rgb(184, 86, 11);
+            border-width: thick;
+        }
+        
+        .GDiv{
+            position:relative;
+            text-align: center;
+            width: 350px;
+            height: 450PX;
+            padding-left: 5px;
+         
+         
+        }
+        
+        
+        .SaveUser{
+
+            position: absolute;
+            left:78%;
+            top:95%;
+            height: 50px;
+            width: 100px;
+           
+           }
+
+           
+.goBack{
+
+    position: absolute;
+    left:2%;
+    top:95%;
+   }
+ 
+    }
+    

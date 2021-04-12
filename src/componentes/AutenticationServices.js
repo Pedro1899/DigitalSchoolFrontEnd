@@ -118,8 +118,9 @@ updateSchool(form){
     return axios.put(`${API_URL}/School/update/`,form)
 }
 
-CreateSchool(form){
-    return axios.post(`${API_URL}/School/newSchool/`,form)
+CreateSchool(nameSchool, password){
+    
+    return axios.post(`${API_URL}/School/newSchool/${nameSchool}/${password}`)
 }
 
 

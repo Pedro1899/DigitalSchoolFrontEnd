@@ -1,11 +1,11 @@
 
 
 .PanelCourses{
-height: 570px;
+height: 540px;
 width: 93%;
 border-bottom: 0.5px solid;
 margin-left: 80px;
-margin-top: 15px;
+margin-top: -35px;
 border-color: rgb(196, 195, 195);
 background-color: rgba(250, 250, 250, 0.979);
 z-index: -1;
@@ -22,13 +22,13 @@ z-index: -1;
 
 }
 .ManagemntCourses{
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
     border: 0.4px solid;
     position: relative;
     
-    border-color: rgb(196, 195, 195);
-    background-color: rgba(250, 250, 250, 0.979);
+    border-color: rgb(204, 204, 204);
+    background-color: rgba(240, 245, 245, 0.979);
 }
 
 .ShiftCourseTeacher{
@@ -36,9 +36,7 @@ z-index: -1;
     height: 30px;
     width: 50px;
     
-    position: absolute;
-    top: 0;
-    right: 0;
+   
     margin-right: 3px;
     padding-top: 8px;
   
@@ -93,34 +91,49 @@ z-index: -1;
 }
 
 .GradeDiv{
-    height: 60%;
-    width: 18%;
-    
-    position: absolute;
-    left: 5%;
-    top: 90px;
-   
+    height: 300px;
+    width: 250px;
+    margin-left:60px;
+    margin-top: 75px;
+   margin-bottom: 20px;
     border: 0.5 solid;
     border-color: rgb(196, 193, 193);
     border-radius: 12%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x:hidden;
   
 }
-.DescriptionGrade{
-    height: 100px;
-    width: 18%;
-    
-    position: absolute;
-    left: 5%;
-    top: 80%;
-   
+
+.GradeDivAss{
+  height: 300px;
+  width: 315px;
+  margin-left:40px;
+  margin-top: 75px;
+ margin-bottom: 20px;
+  border: 0.5 solid;
+  border-color: rgb(196, 193, 193);
+  border-radius: 12%;
+  overflow-y: auto;
+  overflow-x:hidden;
+
+}
+
+.ContainerDivTables{
+
+  height: 500px;
+  width: auto;
   
-    font-family: "Courier New", Courier, monospace;
-    font-size: 28px;
-    color: rgba(51, 2, 17, 0.767);
-   font-weight: 900;
-    overflow: auto;
-    font-style: oblique;
+ 
+ text-align: center;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 28px;
+  color: rgba(51, 2, 17, 0.767);
+ font-weight: 900;
+ 
+  font-style: oblique;
+  overflow-y: auto;
+  overflow-x:auto;
 
 }
 
@@ -271,17 +284,17 @@ z-index: -1;
    
   /* Handle */
   .GradeDiv::-webkit-scrollbar-thumb {
-    background:#497e52ec
+    background:#bfbfbfec
   }
   
   /* Handle on hover */
   .GradeDiv::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background:transparent; 
   }
 
   
   .AssDiv::-webkit-scrollbar {
-    width: 7px;
+    width: 0.1px;
   }
   
   /* Track */
@@ -364,3 +377,22 @@ z-index: -1;
   .CoursesDiv::-webkit-scrollbar-thumb:hover {
     background: #555; 
   }
+
+  
+@media only screen and (max-width: 479px) {
+  /* Crear nuevo estudiante*/
+
+  .PanelCourses{
+    height: 475px;
+    width: 400px;
+   
+    margin-left: 5px;
+    margin-top: -35px;
+    border-color: rgb(196, 195, 195);
+    background-color: rgba(250, 250, 250, 0.979);
+    z-index: -1;
+    overflow-y:auto ;
+    overflow-x:hidden;
+    }
+  }
+  

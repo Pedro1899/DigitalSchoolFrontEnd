@@ -3,7 +3,8 @@ import React,{Component} from 'react'
 
 import AutenticationServices from './AutenticationServices.js'
 import { makeStyles } from '@material-ui/core/styles';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  './login.css'
 import Avatar from '@material-ui/core/avatar'
 import {BsCloudUpload} from 'react-icons/bs'
 import {AiOutlineWarning} from 'react-icons/ai'
@@ -310,142 +311,16 @@ render(){
 
     return(
             
-<div style={{position:'absolute', width:'800px', height:'500px', top:'7%', left:'7%'}}>
+<div class="container">
+<div class="row">
+<div class="col-12 col-lg-12 mt-8 text-center">
+<div className="Title">Create your School</div>
 
- 
-
-
-<div style={{position:'absolute', width:'240px',
-        height:'250px', top:'0px', left:'30%' }} > <UpAvatar picture={this.state.picture}  ></UpAvatar> </div>
-  
-  <div className="SetTitleNewSchool">
-  <input className="textBoxStudent"  id="Utitle" name="titleNewS" type='text' value={this.state.titleNewS} onChange={this.Handleİnpt} onFocus={this.HandleFocus} />
   </div>
-  
-  <div className="SetPasswordNewS">
-    <input className="textBoxStudent"  id="UDescription" name="passNewS" type='password' value={this.state.passNewS} onChange={this.Handleİnpt} onFocus={this.HandleFocus}/>
-    </div>
-       
-            <input type="file" name="file" id="file" className="inputfile" accept=".jpg,.jpeg,.png, .gif" onChange={this.fileSelectedHandler} />
-          
-            <div style={{
-        position: 'absolute',
-        top: '35%',
-        left: '30%'
 
-     }}>
-                  <label htmlFor="file" className="LabelUpload">
-                           <BsCloudUpload size="1.3rem" color="gray"></BsCloudUpload>
-                   </label>
-                  
-             </div> 
-           
+  </div>
 
-            
-             
-        
-{/*                            alert             */}
-
-                     {this.state.AlertMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "50.5%",top: "5.5%", backgroundColor:this.state.bgcolorAlert, border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
-
-             {this.state.alertPicture && <div className="MessageAlertPicture">FAIL UPLOAD</div>}
-            {this.state.helpMouseOverUploadPicture && <div className="DivUploadHelp">change your picture</div>}
-          
-            {this.state.alert && <div style={{height: "60px", width: '250px', position:"absolute", left:  "60%",top: "50%", backgroundColor:'#F6F7DF', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
-
-{this.state.alertSuccess && <div style={{height: "30px", width: '250px', position:"absolute", left:  "40%",top: "50%", backgroundColor:'#8FE777', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><GrStatusGood size='1.2rem' /> &nbsp; &nbsp; Change saved</div>}
-
-{this.state.alertFail && <div style={{height: "35px", width: '175px', position:"absolute", left:  "40%",top: "50%", backgroundColor:'#F99696 ', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><GrStatusDisabled size='1.2rem' /> &nbsp; &nbsp; Fail! contact us</div>}
-
-
-
-{/*                        N A M E     S C H O O L                  */}
-
-
-
-  
-       
-
-
-       {   /*                 D A T E S                  */ }
-
-         {this.state.flagDate && <div style={{position:'absolute', left:'45%', top:'60%',  width:'35%', height:'200px'}}> 
-         <GetCalendar Language={this.state.language} MontStart={this.state.dateStart} 
-         MontFinish={this.state.dateFinish} ></GetCalendar>   </div>}
-{this.state.isAdmin  &&
- <div onClick={this.ShiftChange}  style={{position:'absolute', left:'40%', top:'65%', opacity:'0.4', cursor:'pointer'}}> 
-         <GrConfigure size='1.2rem'></GrConfigure>  </div>}
-
-
-{!this.state.flagDate && <div style={{position:'absolute', left:'45%', top:'65%', width:'35%', height:'100px'}}> 
-<div style={{fontSize:'18px', opacity:'0.5', fontStyle:'oblique', textAlign:'right', width:'100px'}}>We start</div>  
-    <GetDate setDate={this.state.dateNewStart} handleDate={this.NewStartDate}></GetDate>   </div>}
-
-        {!this.state.flagDate && <div style={{position:'absolute', left:'45%',  top:'85%', width:'35%', height:'100px'}}> 
-        <div style={{fontSize:'18px', opacity:'0.5', fontStyle:'oblique', textAlign:'right', width:'100px'}}>We finish</div>  
-     <GetDate setDate={this.state.dateNewFinish} handleDate={this.NewFinishDate}></GetDate>   </div>}
-
-
-{ /*                    F I N      D A T E S       */ }
-
-
-
- <div style={{position:'absolute', left:'83%',  top:'68%', width:'0.5%', height:'150px', border:'1px solid #DFD7D7 ', 
-                                     borderBottom:'none', borderTop:'none' }}> 
-
-        </div>
-
-  <div style={{position:'absolute', left:'90%',  top:'65%', width:'35%', height:'70px', opacity:'0.6'
-                                      }}> 
-                                     <FaRecycle size='1.3rem'></FaRecycle>
-                                      <br></br>
-                                      <br></br>
-                                     
-                                      {!this.state.flagDate &&      <input style={{width:'80px', background:'transparent',marginLeft:'30px',  borderTop: 'none', 
-                                       borderLeft: 'none' , borderRight: 'none'}}
-
-                  onChange={this.Handleİnpt} type="text" value={this.state.Cicle} name='Cicle' placeholder="# month" />}
-
-                                    {this.state.flagDate && <div style={{marginLeft:'15px'}}> {'# '+this.state.Cicle +' months'}</div>}
-
-        </div>
-
-      
-
-    {/*               LANGUAGE OPTIONS                                   */}
-       
-
-
-
-        
-
-
-         <div style={{position:'absolute', width:'100px', height:'80px', top:'100%', left:'76%'}}>
-           <button className="SaveActivityButton" onClick={this.SaveActivity}>
-              save</button>
-              
-        </div>
-
-                                                     <div style={{position:'absolute', width:'100px', height:'80px', 
-                                                top:'115%', left:'76%'}}>
-                                                  <button className="SaveActivityButton" onClick={()=>{
-    this.props.history.push( `/`)}}>
-                                                     back</button></div>
-
- <div style={{position:'absolute', width:'250px', height:'80px', top:'115%', left:'92%'}}>
- <label>{this.state.InfoNewUser} </label>
- </div>
-
-                              
-       {this.state.loadingPicture && <div style={{position:'absolute', width:'75px', height:'50px', top:'95%', left:'58%'}}> <img src='/images/loading.gif' alt="" style={{width:'55px', height:'50px'}} ></img> </div>}
-    </div>
-
-     
-    
+</div>
         )
 }
 

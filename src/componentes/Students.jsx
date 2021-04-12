@@ -506,11 +506,11 @@ render(){return(
     {/*                    Create a student                      */}
  {this.state.steepOneAddNew && <div className="newStudent">
      <div className="conteinerNewStudent">
- 
+     <div className="container">
+       <div className="row">
+         <div className="col-lg-12">
 
- <div style={{ position: 'absolute',
-    left:'2%',
-    top:'2%', opacity:'0.7', cursor:'pointer'}}
+                    <div className="ConfigStudentButton"
 onClick={()=>{this.setState({ steepOneAddNew:false, helpMouseOverAllStudents:false, ChangeStudent:true})}}
 >
   
@@ -520,7 +520,73 @@ onClick={()=>{this.setState({ steepOneAddNew:false, helpMouseOverAllStudents:fal
  <div className="titleSteepOneStudent"> 
 Create a new student
  </div>
-        <div className="divPicture" > <UpAvatar picture={this.state.picture} category={1}  ></UpAvatar> </div>
+         </div>
+ 
+       </div>
+
+
+
+ 
+  
+<div className="row pt-3">
+  <div className="col-lg-12 ">
+  <div className="centerBlock">
+                
+       <UpAvatar picture={this.state.picture} category={1}  ></UpAvatar> 
+   </div>
+   
+  </div>
+</div>
+
+<div className="row pt-2">
+  <div className="col-lg-12 " >
+  <div className="centerBlock">
+                
+  <div className="newId">ID<input className="textBoxStudent"  type="text" id="id" name="ID"  value ={this.state.ID} onChange={this.Handleİnpt}  /></div>
+   </div>
+   
+  </div>
+</div>
+
+
+<div className="row pt-2">
+  <div className="col-lg-12 ">
+  <div className="centerBlock">
+                
+  <div className="newName">Name<input className="textBoxStudent"  id="uname" name="name" type='text' value={this.state.name} onChange={this.Handleİnpt} /></div>
+   </div>
+   
+  </div>
+</div>
+<div className="row pt-2">
+  <div className="col-lg-12 ">
+  <div className="centerBlock">
+                
+  <div className="newSurname">Surname<input className="textBoxStudent"  id="usname" name="surname" type='text' value={this.state.surname} onChange={this.Handleİnpt}></input></div>
+   </div>
+   
+  </div>
+</div>
+
+<div className="row pt-2">
+  <div className="col-lg-12 " >
+  <div className="centerBlock">
+                
+  <div className="newDate">Birth Day  <Calendar Bday={this.state.Bday} changeDate={this.handleDayChange}  />{/*<input className="textBoxStudent" id="udate" name="date"  type='text' value={this.state.date} onChange={this.Handleİnpt}></input><DayPickerInput onDayChange={this.handleDayChange} /> */} </div>
+   </div>
+</div>
+</div>
+
+
+<div className="row pt-0">
+  <div className="col-lg-12" >
+  
+  {this.state.hideNext &&  <div className="next" onClick={this.NextSteep}><AiOutlineRightCircle size="2rem" style={{float:'right'}} ></AiOutlineRightCircle></div>} 
+  {this.state.loadingPicture && <UpAvatarLoad  picture='/images/loading.gif' ></UpAvatarLoad> }
+</div>
+</div>
+ </div>
+      
         
              <input type="file" name="file" id="file" className="inputfile" accept=".jpg,.jpeg,.png, .gif" onChange={this.fileSelectedHandler} />
              <div className="DivUpload">
@@ -534,29 +600,33 @@ Create a new student
               {this.state.alertPicture && <div className="MessageAlertPicture">FAIL UPLOAD</div>}
              {this.state.helpMouseOverUploadPicture && <div className="DivUploadHelp">choose a picture</div>}
            
-            <div className="newId">ID<input className="textBoxStudent"  type="text" id="id" name="ID"  value ={this.state.ID} onChange={this.Handleİnpt}  /></div>
+
 {this.state.alertId && <div className="MessageAlertId">{this.state.messageId}</div> }
 
-        <div className="newName">Name<input className="textBoxStudent"  id="uname" name="name" type='text' value={this.state.name} onChange={this.Handleİnpt} /></div>
+       
         {this.state.alertName && <div className="MessageAlertName">Not valid [Saray]</div> }
-        <div className="newSurname">Surname<input className="textBoxStudent"  id="usname" name="surname" type='text' value={this.state.surname} onChange={this.Handleİnpt}></input></div>
+      
         {this.state.alertSurname && <div className="MessageAlertSurname">Not valid [Sincal]</div> }
-        <div className="newDate">Birth Day  <Calendar Bday={this.state.Bday} changeDate={this.handleDayChange}  />{/*<input className="textBoxStudent" id="udate" name="date"  type='text' value={this.state.date} onChange={this.Handleİnpt}></input><DayPickerInput onDayChange={this.handleDayChange} /> */} </div>
+        
         {this.state.alertDate && <div className="MessageAlertSurBday">Not valid [date]</div> }
-       {this.state.hideNext &&  <div className="next" onClick={this.NextSteep}><AiOutlineRightCircle size="2rem"  ></AiOutlineRightCircle></div>} 
+
                                
-        {this.state.loadingPicture && <div className="loadingPicture"> <UpAvatar category ={4} picture='/images/loading.gif' ></UpAvatar> </div>}
+       
      </div>
      </div>}
 
  {this.state.steepTwoAddNew && <div className="newStudentTwo" >
      
-    <div className="conteinerNewStudent">
-    <div className="divGrade">
-    <div className="containMaterialTable">
-    <div className="titleSteepTwoGrade"> Choose a grade
- </div>
-    <div className = "GradesMaterialTable">
+   <div className="container">
+     <div className="row">
+       <div className="col-lg-12">
+         <div className="container">
+           <div className="row">
+             <div className="col-lg-6 col-12 ">
+               <div className="GDiv">
+  <div className="titleSteepTwoGrade"> Choose a grade
+ </div> 
+ <div className = "GradesMaterialTable">
     <MaterialTable title="" 
         data = {this.state.ListGrades}
         columns ={this.state.CollumnsGrades}
@@ -575,11 +645,13 @@ Create a new student
             
         ></MaterialTable>
         </div>
-</div>
-</div>
-<div className="divTutor">
-<div className="ContainMaterialTable">
-<div className="titleSteepTwoGrade"> Choose a tutor
+               </div>
+        
+            
+             </div>
+             <div className="col-lg-6 col-12 ">
+          <div className="TutorDiv">
+                     <div className="titleSteepTwoGrade"> Choose a tutor
  </div>
 <div className = "GradesMaterialTable">
     <MaterialTable title="" 
@@ -605,15 +677,25 @@ Create a new student
 
         
 </div>
-</div>
+          </div>
+
+    
+             </div>
+
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+   
+   
 
 
-</div>
 <div className="goBack" onClick={this.goBack} ><AiOutlineLeftCircle size = "2rem"  ></AiOutlineLeftCircle></div>
 <div className="SaveUser"   ><button className="SaveButton" onClick={this.Save}>GO!</button></div>
  {this.state.success && <div className="StudentSaved"> <UpAvatar category ={1} picture='/images/source.gif' ></UpAvatar> </div>}
-    </div>
-
+   
      
         
      </div>
@@ -704,6 +786,19 @@ default:  return   <Avatar  size={40}  className = {classes.large} ></Avatar>
 
 
  }
+
+ function UpAvatarLoad(props) {
+  const classes = useStyles();
+
+
+          return   <Avatar  size={40} src= {props.picture} className = {classes.icono} style={{float:'right'}}></Avatar>
+    //students
+     
+      
+
+
+
+}
 
  function UpLanguage(props){
       

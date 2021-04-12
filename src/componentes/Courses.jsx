@@ -821,7 +821,12 @@ render(){
   return(
 <div className="PanelCourses">
  {this.state.showCoursesDiv &&  <div className = "ManagemntCourses" >
-  <div className="ShiftCourseTeacher"
+
+  
+     <div className="row">
+       <div className="col-lg-11" ></div>
+       <div className="col-lg-1" >
+       <div className="ShiftCourseTeacher"
    
    onClick={()=>{
      this.FilterCoursesAss()
@@ -851,78 +856,86 @@ render(){
       }} > 
   <FiLink size="1.5rem"></FiLink>
     </div>
-{/****************************************** GRADES   ********************* */}
-  <div className="GradeDiv">  
+       </div>
+     </div>
+ 
+ 
+  <div className="row">
+      <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDiv">  
 
-  <MaterialTable title="" 
-        data = {this.state.ListGrades}
-        columns ={this.state.CollumnsGrades}
-          options={{
-            rowStyle: rowData => ({
-              backgroundColor: (this.state.selectionGrade === rowData.tableData.id) ? '#A3C3E1' : '#BEECDD',
+<MaterialTable title="" 
+      data = {this.state.ListGrades}
+      columns ={this.state.CollumnsGrades}
+        options={{
+          rowStyle: rowData => ({
+            backgroundColor: (this.state.selectionGrade === rowData.tableData.id) ? '#A3C3E1' : '#BEECDD',
+            
+            fontSize: (this.state.selectionGrade === rowData.tableData.id) ? 14.5 : 13.5,
+          }),
+          paging: false,
+          headerStyle: {
+            zIndex: 0,
+            backgroundColor:'#DBA6A6'
+          }, 
+          header: false, 
+          actionsCellStyle: {
+            
+              backgroundColor:'#8CCEB9'
+          }
+      }}
+          editable={{
+              onRowAdd: (newData) =>
+                new Promise((resolve) => {
+                  this.AddnewRow(newData,resolve)
+                  }),
+                  onRowDelete: (rowData) =>
+                  new Promise((resolve) => this.DeleteRowGrade(rowData,resolve))
+
               
-              fontSize: (this.state.selectionGrade === rowData.tableData.id) ? 14.5 : 13.5,
-            }),
-            paging: false,
-            headerStyle: {
-              zIndex: 0,
-              backgroundColor:'#DBA6A6'
-            }, 
-            header: false, 
-            actionsCellStyle: {
-              
-                backgroundColor:'#8CCEB9'
-            }
-        }}
-            editable={{
-                onRowAdd: (newData) =>
-                  new Promise((resolve) => {
-                    this.AddnewRow(newData,resolve)
-                    }),
-                    onRowDelete: (rowData) =>
-                    new Promise((resolve) => this.DeleteRowGrade(rowData,resolve))
+              }}
 
-                
-                }}
-
-                onRowClick={((evt, selectedRow) => this.changeSelectionGrade(selectedRow))}
-        ></MaterialTable>
-        </div>
-        <div className = "DescriptionGrade"> {(()=>{
-        
+              onRowClick={((evt, selectedRow) => this.changeSelectionGrade(selectedRow))}
+      ></MaterialTable>
+      </div>
+     {(()=>{
+      
 switch (this.state.language) {
 
 case '0':
 
-  return 'derece'
-  
-  
-  case '1':
-    return 'Grade'
-   
-
-    case '2':
-      return 'Grado'
+return 'dersane'
 
 
-  case '3':
-    return 'derece'
+case '1':
+  return 'Classroom'
  
+
+  case '2':
+    return 'Salon'
+
+
+case '3':
+  return 'derece'
+
 
 
 default:
-  
-}})()} </div>
+
+}})()} 
+        </div>
+      
 
 
-{/*
- ********************************************************* LESSONS **********************************************
+      </div>
 
- */}
+      <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDiv">  
 
-        <div className="LessonsDiv">  
 
-<MaterialTable title="" 
+        <MaterialTable title="" 
       data = {this.state.ListLesson}
       columns ={this.state.CollumnsLessons}
         options={{
@@ -975,45 +988,54 @@ default:
 
       ></MaterialTable>
       </div>
-      <div className = "DescriptionLessons">{(()=>{
+      {(()=>{
        
-switch (this.state.language) {
+       switch (this.state.language) {
+       
+       case '0':
+       
+         return 'Sınıf'
+       
+         
+         case '1':
+           return 'Lesson'
+           
+       
+           case '2':
+             return 'Lecciones'
+         
+       
+         case '3':
+           return 'Sınıf'
+         
+       
+       
+       default:
+         break;
+       }})()}
 
-case '0':
 
-  return 'Sınıf'
+{this.state.ButtonAddNewCourse &&  <div style={{position:'absolute', left:'70%', top:'60%', width:'100px',height:'100px', opacity:'0.5', cursor:'pointer' }} onClick={this.sendCoursesPivot}  ><GrSend size="2.7rem"></GrSend></div>}
+            {this.state.loadingSave &&  <div style={{position:'absolute', left:'70%', top:'60%', width:'100px',height:'100px', opacity:'0.5', cursor:'pointer'}}><img alt='Empty ' style={{height: "50px", width: '50px'}} src='/images/loading.gif'></img></div> }
 
-  
-  case '1':
-    return 'Lesson'
-    
-
-    case '2':
-      return 'Lecciones'
-  
-
-  case '3':
-    return 'Sınıf'
-  
-
-
-default:
-  break;
-}})()}</div>
-
-            {this.state.ButtonAddNewCourse &&  <div style={{position:'absolute', left:'60%', top:'52%', width:'5%',height:'5%', opacity:'0.5', cursor:'pointer' }} onClick={this.sendCoursesPivot}  ><GrSend size="2.7rem"></GrSend></div>}
-            {this.state.loadingSave &&  <div style={{height: "50px", width: '50px', position:"absolute", left:  "60%",top: "57%"}}><img alt='Empty ' style={{height: "50px", width: '50px'}} src='/images/loading.gif'></img></div> }
-
-      {/* ***************************************** C O U R S E S ************************************ */}
-      {this.state.AlertMessage && <div style={{height: "30px", width: '250px', position:"absolute", left:  "74.5%",top: "18.5%", backgroundColor:'#F6F7DF', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
+            {this.state.AlertMessage && <div style={{height: "80px", width: '400px', fontSize:"18px", fontWeight:'300', fontStyle:"normal" ,position:"absolute", left:  "25",top: "5%", backgroundColor:'#F6F7DF', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10', textAlign:'center'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
       
-      {this.state.AlertMessageGrade && <div style={{height: "30px", width: '250px', position:"absolute", left:  "5%",top: "18.5%", backgroundColor:'#F6F7DF', border:'1px',
- paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
+      {this.state.AlertMessageGrade && <div style={{height: "80px", width: '400px', fontSize:"18px", fontWeight:'300', fontStyle:"normal" ,position:"absolute", left:  "25",top: "5%", backgroundColor:'#F6F7DF', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10', textAlign:'center'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
       
 
-      <div className="CoursesDiv">  
-      {!this.state.CoursesFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "105px", width: '105px', paddingTop: '100PX', opacity:'0.60'}} ></img>
+      
+        </div>
+      
+
+
+      </div>
+
+      <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDivAss">  
+        {!this.state.CoursesFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "200px", width: '150px', paddingTop: '100PX', opacity:'0.60'}} ></img>
 <p style={{fontSize:'13.5px', color:'black', opacity:'0.3'}} >
 choose a grade and assign lessons</p></div> }
 {this.state.CoursesFlag &&
@@ -1080,33 +1102,59 @@ choose a grade and assign lessons</p></div> }
          
       ></MaterialTable>
       } 
+
+  
+      </div>
+      {(()=>{
+   
+   switch (this.state.language) {
+   
+   case '0':
+   
+     return 'dersler'
+   
+     
+     case '1':
+       return 'Courses'
+       
+   
+       case '2':
+         return 'Cursos'
+     
+   
+     case '3':
+       return 'dersler'
+     
+   
+   
+   default:
+     break;
+   }})()}
+        </div>
+      
+
+
       </div>
 
-      <div className = "DescriptionCourses"> {(()=>{
-   
-switch (this.state.language) {
 
-case '0':
+  </div>
 
-  return 'dersler'
+{/****************************************** GRADES   ********************* */}
+ 
+{/*
+ ********************************************************* LESSONS **********************************************
 
-  
-  case '1':
-    return 'Courses'
+ */}
+
+     
+
+            
+
+      {/* ***************************************** C O U R S E S ************************************ */}
+
+
     
-
-    case '2':
-      return 'Cursos'
-  
-
-  case '3':
-    return 'dersler'
-  
-
-
-default:
-  break;
-}})()}</div>
+      
 
 </div>
 }
@@ -1114,22 +1162,105 @@ default:
 {/*           ***********************                 ASSIGNMENTS    ********************************* */}
 
 
-{this.state.showAssignDiv && <div className='ManagemntAssigns' >
-<div className="ShiftCourseTeacher"
-
-   onClick={()=>{
-     this.setState({showCoursesDiv:true, showAssignDiv:false, 
-                    ListAssPiv:[], selectionTeacher:null, ListCoursesToAssign:[], AssFlag:false, ButtonAddNewAss:false
-     })
-     this.props.title('Create courses')
-     }} > 
+{this.state.showAssignDiv && <div className='ManagemntCourses' >
+<div className="row">
+       <div className="col-lg-11" ></div>
+       <div className="col-lg-1" >
+       <div className="ShiftCourseTeacher"
+    onClick={()=>{
+      this.setState({showCoursesDiv:true, showAssignDiv:false, 
+                     ListAssPiv:[], selectionTeacher:null, ListCoursesToAssign:[], AssFlag:false, ButtonAddNewAss:false
+      })
+      this.props.title('Create courses')
+      }} > 
   <FiList size="1.5rem"></FiList>
     </div>
+       </div>
+     </div>
+
     
     {/*  *******************************Cursos ***************************  */}
-    
-    <div className="CoursesDiv2">
-    {this.state.CoursesInAssFlag && <MaterialTable title="" 
+    <div className="row">
+
+    <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDiv">  
+        <MaterialTable title="" 
+      data = {this.state.ListTeacher}
+      columns={[
+
+        {title : 'idTeacher', field : 'idTeacher', hidden:true},
+        {title: " ", render: rowData => <UpAvatar category ={1} name={rowData.name}  picture={rowData.picture} ></UpAvatar>},
+        {title : 'Name', field : 'name' },
+        {title : 'Surname', field : 'surname'}, 
+        {title : 'picture', field : 'picture',  hidden:true}, 
+        
+
+
+      ]}
+
+      options={{
+        rowStyle: rowData => ({
+          backgroundColor: (this.state.selectionTeacher === rowData.tableData.id) ? '#F9B6B6' : '',
+          fontSize:13
+          
+        }),
+        paging: false,
+        headerStyle: {
+          zIndex: 0,
+          backgroundColor:'#DBA6A6'
+        }, 
+        header: false, 
+        actionsCellStyle: {
+
+            backgroundColor:'#F3F4F5'
+        }
+    }}
+ 
+
+    onRowClick={((evt, selectedRow) => this.changeSelectionTeacher(selectedRow))}
+ 
+      ></MaterialTable>
+
+    </div>
+     {(()=>{
+      
+switch (this.state.language) {
+
+case '0':
+
+return 'öğretmenler'
+
+
+case '1':
+  return 'Teachers'
+ 
+
+  case '2':
+    return 'Profesores'
+
+
+case '3':
+  return 'öğretmenler'
+
+
+
+default:
+
+}})()} 
+        </div>
+      
+
+
+      </div>
+
+
+
+    <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDiv"> 
+        {this.state.CoursesInAssFlag && 
+  <MaterialTable title="" 
       data = {this.state.ListCourses}
       columns={[ {title : 'id_Course', field : 'id_Course', hidden:true},
       
@@ -1211,77 +1342,66 @@ default:
 
     onRowClick={((evt, selectedRow) => this.changeSelectionCoursesAss(selectedRow))}
       ></MaterialTable>}
-    {!this.state.CoursesInAssFlag &&<div><img alt='' src='/images/emptyCourses.png'  style={{height: "105px", width: '105px', paddingTop: '100PX', opacity:'0.60'}} ></img>
+    </div>
+
+    {(()=>{
+      
+      switch (this.state.language) {
+      
+      case '0':
+      
+      return 'dersler'
+      
+      
+      case '1':
+        return 'Courses'
+       
+      
+        case '2':
+          return 'Cursos'
+      
+      
+      case '3':
+        return 'dersler'
+      
+      
+      
+      default:
+      
+      }})()} 
+
+
+{this.state.ButtonAddNewAss &&  <div style={{position:'absolute', left:'70%', top:'60%', width:'100px',height:'100px', opacity:'0.5', cursor:'pointer' }} onClick={this.sendAssPivot}  ><GrSend size="2.7rem"></GrSend></div>}
+{this.state.loadingSaveAss &&  <div style={{height: "100px", width: '100px', position:"absolute", left:  "80%",top: "90%"}}><img alt='Empty ' style={{height: "100px", width: '100px'}} src='/images/loading.gif'></img></div> }
+
+
+
+    {this.state.CoursesInAssFlag&&<div style={{position:'absolute',  top:'20%', left:'80%', borderRadius:'75%', paddingTop:'0px', paddingLeft:'10px',  paddingRight:'10px',  paddingBottom:'0px', opacity:'0.5', cursor:'pointer',  backgroundColor:this.state.BGColorCourses, border:'0.5px solid', borderColor:'#C3C3C3 '}} onClick={this.FilterCoursesNotAss}><FaUnlink size='1rem'></FaUnlink></div>  }
+{this.state.CoursesInAssFlag&&<div style={{position:'absolute',  top:'30%', left:'80%', borderRadius:'75%', paddingTop:'0px', paddingLeft:'10px',  paddingRight:'10px',  paddingBottom:'0px', opacity:'0.5', cursor:'pointer',  backgroundColor:this.state.BGColorCoursesIn, border:'0.5px solid', borderColor:'#C3C3C3 '}}  onClick={this.FilterCoursesAss} ><FaLink size='1rem'></FaLink></div>  }    
+    {!this.state.CoursesInAssFlag &&<div><img alt='' src='/images/emptyCourses.png'  style={{height: "180px", width: '150px', paddingTop: '100PX', opacity:'0.60'}} ></img>
 <p style={{fontSize:'13.5px', color:'black', opacity:'0.3'}} >
-Create Courses</p></div> }
-
-    </div>
+Create Courses</p></div> } 
 
 
-
-{/* ************************************* TEACHERS ****************************  */}
-    <div className="TeacherListDiv">
-
-    <MaterialTable title="" 
-      data = {this.state.ListTeacher}
-      columns={[
-
-        {title : 'idTeacher', field : 'idTeacher', hidden:true},
-        {title: " ", render: rowData => <UpAvatar category ={1} name={rowData.name}  picture={rowData.picture} ></UpAvatar>},
-        {title : 'Name', field : 'name' },
-        {title : 'Surname', field : 'surname'}, 
-        {title : 'picture', field : 'picture',  hidden:true}, 
-        
-
-
-      ]}
-
-      options={{
-        rowStyle: rowData => ({
-          backgroundColor: (this.state.selectionTeacher === rowData.tableData.id) ? '#F9B6B6' : '',
-          fontSize:13
-          
-        }),
-        paging: false,
-        headerStyle: {
-          zIndex: 0,
-          backgroundColor:'#DBA6A6'
-        }, 
-        header: false, 
-        actionsCellStyle: {
-
-            backgroundColor:'#F3F4F5'
-        }
-    }}
- 
-
-    onRowClick={((evt, selectedRow) => this.changeSelectionTeacher(selectedRow))}
- 
-      ></MaterialTable>
-
-    </div>
-
-
-
-
-
-{this.state.AlertMessageAss && <div style={{height: "30px", width: '400px', position:"absolute", left:  "70.5%",top: "18.5%", backgroundColor:'#F6F7DF', border:'1px',
+{this.state.AlertMessageAss && <div style={{height: "80px", width: '400px', fontSize:"18px", fontWeight:'300', fontStyle:"normal" ,position:"absolute", left:  "25",top: "5%", backgroundColor:'#F6F7DF', border:'1px',
  paddingTop:'8px', borderRadius:'5%', zIndex:'10', textAlign:'center'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
 
-{this.state.ButtonAddNewAss &&  <div style={{position:'absolute', left:'60%', top:'52%', width:'5%',height:'5%', opacity:'0.5', cursor:'pointer' }} onClick={this.sendAssPivot}  ><GrSend size="2.7rem"></GrSend></div>}
-{this.state.loadingSaveAss &&  <div style={{height: "50px", width: '50px', position:"absolute", left:  "60%",top: "57%"}}><img alt='Empty ' style={{height: "50px", width: '50px'}} src='/images/loading.gif'></img></div> }
-
-
-{this.state.AlertMessageTeacher && <div style={{height: "30px", width: '250px', position:"absolute", left:  "5%",top: "18.5%", backgroundColor:'#F6F7DF', border:'1px',
+ 
+{this.state.AlertMessageTeacher && <div style={{height: "80px", width: '400px', position:"absolute", left:  "25%",top: "5%", backgroundColor:'#F6F7DF', border:'1px',
  paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
-{this.state.CoursesInAssFlag&&<div style={{position:'absolute',  top:'20%', left:'58%', borderRadius:'50%', paddingTop:'6px', paddingLeft:'7px',  paddingRight:'7px',  paddingBottom:'3px', opacity:'0.5', cursor:'pointer',  backgroundColor:this.state.BGColorCourses, border:'0.5px solid', borderColor:'#C3C3C3 '}} onClick={this.FilterCoursesNotAss}><FaUnlink size='1rem'></FaUnlink></div>  }
-{this.state.CoursesInAssFlag&&<div style={{position:'absolute',  top:'30%', left:'58%', borderRadius:'50%', paddingTop:'6px', paddingLeft:'7px',  paddingRight:'7px',  paddingBottom:'3px', opacity:'0.5', cursor:'pointer',  backgroundColor:this.state.BGColorCoursesIn, border:'0.5px solid', borderColor:'#C3C3C3 '}}  onClick={this.FilterCoursesAss} ><FaLink size='1rem'></FaLink></div>  }       
-{/************************COURSES ASSIGNED TO TEACHER  *************                                   */}
-       <div className="AssDiv">  
+   
+        </div>
       
-      
-      
-      {!this.state.AssFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "105px", width: '105px', paddingTop: '100PX', opacity:'0.60'}} ></img>
+
+
+      </div>
+
+
+      <div className="col-lg-4  " >
+        <div className="ContainerDivTables">
+        <div className="GradeDivAss"> 
+        
+        {!this.state.AssFlag && <div><img alt='' src='/images/emptyCourses.png'  style={{height: "200px", width: '165px', paddingTop: '100PX', opacity:'0.60'}} ></img>
 <p style={{fontSize:'13.5px', color:'black', opacity:'0.3'}} >
 choose a teacher and assign courses</p></div> }
   
@@ -1344,7 +1464,56 @@ choose a teacher and assign courses</p></div> }
          
       ></MaterialTable>
       }
-	</div>
+   
+    </div>
+    {(()=>{
+      
+      switch (this.state.language) {
+      
+      case '0':
+      
+      return 'ödevler'
+      
+      
+      case '1':
+        return 'assignments'
+       
+      
+        case '2':
+          return 'asignaciones'
+      
+      
+      case '3':
+        return 'ödevler'
+      
+      
+      
+      default:
+      
+      }})()} 
+
+        </div>
+      
+
+
+      </div>
+
+
+    </div>
+  
+
+
+
+{/* ************************************* TEACHERS ****************************  */}
+ 
+
+
+
+
+
+
+{/************************COURSES ASSIGNED TO TEACHER  *************                                   */}
+
 
     </div>}
 </div>

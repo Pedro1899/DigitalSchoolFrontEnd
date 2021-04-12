@@ -1,4 +1,5 @@
-import React,{Component} from 'react'
+import React,{Component} from 'react';
+import './Students.css'
 import { withRouter } from 'react-router'
 import AutenticationServices from './AutenticationServices.js'
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,12 +16,18 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
       },
     },
+    icono: {
+    
+      width: theme.spacing(4.5),
+        height: theme.spacing(4.5),
+    },
+    
      medium: {
         color: theme.palette.getContrastText(green[500]),
         backgroundColor: green[500],
         fontSize:18,
-        width: theme.spacing(30),
-        height: theme.spacing(30),
+        width: theme.spacing(28),
+        height: theme.spacing(28),
       }
   }));
 class settings extends Component{
@@ -255,8 +262,113 @@ Handleİnpt(event){
 render(){
 
     return(
+      <div className="PanelStudents">
+      <div className="conteinerPanels">
+
+      <div className="newStudent">
+      <div className="conteinerNewStudent">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12">
+ 
+
+ 
+  <div className="titleSteepOneStudent"> 
+ Create a new student
+  </div>
+          </div>
+  
+        </div>
+ 
+ 
+ 
+  
+   
+ <div className="row pt-3">
+   <div className="col-lg-12 ">
+   <div className="centerBlock">
+                 
+        <UpAvatar picture={this.state.picture} category={1}  ></UpAvatar> 
+    </div>
+    
+   </div>
+ </div>
+ 
+ <div className="row pt-2">
+   <div className="col-lg-12 " >
+   <div className="centerBlock">
+                 
+   <div className="newName">Name<input className="textBoxStudent"  id="uname" name="name" type='text' value={this.state.name} onChange={this.Handleİnpt} /></div>
+    </div>
+    
+   </div>
+ </div>
+ 
+ 
+ <div className="row pt-2">
+   <div className="col-lg-12 ">
+   <div className="centerBlock">
+                 
+   <div className="newSurname">Surname<input className="textBoxStudent"  id="usname" name="surname" type='text' value={this.state.surname} onChange={this.Handleİnpt}></input></div> </div>
+    
+   </div>
+ </div>
+ <div className="row pt-2">
+   <div className="col-lg-12 ">
+   <div className="centerBlock">
+  
+   <div className="newSurname">New Password?
+   <input className="textBoxStudent"  id="password" name="password" type='Password' value={this.state.password} onChange={this.Handleİnpt}></input>
+   </div>
+    </div>
+    
+   </div>
+ </div>
+ 
+
+ 
+ 
+ <div className="row pt-0">
+   <div className="col-lg-12" >
+   <div className="centerBlock">
+
+      <button className="SaveActivityButton" onClick={this.SaveActivity}   > save</button></div>
+   {this.state.loadingPicture && <UpAvatarLoad  picture='/images/loading.gif' ></UpAvatarLoad> }
+   {this.state.alertSuccess && <div style={{height: "47px", width: '200px', position:"absolute", left:  "25%",top: "60%", backgroundColor:'#8FE777', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10', textAlign:'left'}}><GrStatusGood size='1.2rem' /> &nbsp; &nbsp; Change saved</div>}
+{this.state.alertFail && <div style={{height: "35px", width: '300px', position:"absolute", left:  "20%",top: "60%", backgroundColor:'#F99696 ', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><GrStatusDisabled size='1.2rem' /> &nbsp; &nbsp; Fail! contact us</div>}
+  {this.state.alert && <div style={{height: "60px", width: '300px', position:"absolute", left:  "20%",top: "60%", backgroundColor:'#F6F7DF', border:'1px',
+ paddingTop:'8px', borderRadius:'5%', zIndex:'10'}}><AiOutlineWarning size='1.2rem' /> &nbsp; &nbsp;{this.state.messageAlert}</div>}
+ </div>
+ </div>
+  </div>
+       
+         
+              <input type="file" name="file" id="file" className="inputfile" accept=".jpg,.jpeg,.png, .gif" onChange={this.fileSelectedHandler} />
+              <div className="DivUpload">
+                    <label htmlFor="file" className="LabelUpload"
+                          onMouseOver={()=>{this.setState({helpMouseOverUploadPicture:true})}}
+                          onMouseOut={()=>{this.setState({helpMouseOverUploadPicture:false})}}>
+                             <BsCloudUpload size="2rem" color="gray"></BsCloudUpload>
+                     </label>
+                    
+               </div>
+               {this.state.alertPicture && <div className="MessageAlertPicture">FAIL UPLOAD</div>}
+         
             
-     <div style={{height:'500px', width:'95%', marginLeft:'70px', overflow:'block'}}>
+ 
+
+ 
+                                
+        
+      </div>
+      </div>
+      </div>
+      </div>
+
+      
+/* <div style={{height:'500px', width:'95%', marginLeft:'70px', overflow:'block'}}>
 <div className="conteinerPanels">
    
 <div style={{position:'absolute', width:'450px', height:'575px', top:'-30px', left:'35%', backgroundColor:'#E5F6F4  ', borderTop:'0.2px solid'}}>
@@ -301,7 +413,7 @@ Would like to change something?
        <div className="newSurname">Surname<input className="textBoxStudent"  id="usname" name="surname" type='text' value={this.state.surname} onChange={this.Handleİnpt}></input></div>
       <div style={{position:'absolute', width:'200px', height:'55px', top:'80%', left:'125px', textAlign:'left'}}>New Password?<input className="textBoxStudent"  id="password" name="password" type='Password' value={this.state.password} onChange={this.Handleİnpt}></input></div>
        
-        <div style={{position:'absolute', width:'100px', height:'80px', top:'92%', left:'28%'}}><button className="SaveActivityButton" onClick={this.SaveActivity}   > save</button></div>
+
                               
        {this.state.loadingPicture && <div style={{position:'absolute', width:'75px', height:'50px', top:'90%', left:'58%'}}> <img src='/images/loading.gif' alt="" style={{width:'55px', height:'50px'}} ></img> </div>}
     </div>
@@ -310,7 +422,9 @@ Would like to change something?
 
      </div>
      
-    
+     */
+      
+  
         )
 }
 
@@ -328,5 +442,18 @@ function UpAvatar(props) {
             }
     
  }
+
+ function UpAvatarLoad(props) {
+  const classes = useStyles();
+
+
+          return   <Avatar  size={40} src= {props.picture} className = {classes.icono} style={{float:'right'}}></Avatar>
+    //students
+     
+      
+
+
+
+}
 
 export default withRouter(settings)

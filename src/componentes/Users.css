@@ -452,3 +452,19 @@ color: black;
   .UsersTeacher::-webkit-scrollbar-thumb:hover {
     background: #9a9b9bec 
   }
+
+  @media only screen and (max-width: 479px) {
+    /* Crear nueva actividad*/
+      
+    .PanelUsers{
+    
+        width:400px;
+        height:500px;
+        border: 1px solid;
+        border-color: rgb(231, 226, 226);
+        margin-left: 5px;
+        background-color: rgb(255, 255, 255);
+        overflow: hide;
+    }
+    }
+    

@@ -6,7 +6,7 @@ import { BsGraphUp, BsCalendar,BsBook } from "react-icons/bs";
 import { FaGraduationCap, FaUserCog, FaSchool} from "react-icons/fa";
 
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Assistance from './Assistance'
 import Results from './Results'
@@ -205,25 +205,56 @@ class Menu extends Component{
                         
         <div className="welcome" >
         <div className="sidebar">
-         <p></p>
-         <p></p>   
-       <Link  to="/Welcome"><AiFillHome></AiFillHome> </Link> 
-        <p></p>
+        <div class="container" >
+                <div class="row">
+                    <div class="col-lg-12 col-2 pt-0 pl-0" >
+                    <Link  to="/Welcome"><AiFillHome></AiFillHome> </Link> 
+                    </div>
+                    {this.props.admin  &&
+                    
+                    <div class="col-lg-12 col-2 pl-0" >
+                    <Link  to="/Welcome/Courses"  ><BsBook size="1.5rem"></BsBook></Link>
+                    </div>
+                   }
+                   
+                    <div class="col-lg-12 col-2 pl-0" >
+                    <Link to="/Welcome/Results" ><BsGraphUp size="1.5rem" ></BsGraphUp>  </Link>{/*[results]*/ } 
+                    </div>
+                    <div class="col-lg-12 col-2 pl-0" >
+                    <Link to="/Welcome/Program" ><BsCalendar size="1.5rem"></BsCalendar> </Link>{/*Program*/ }
+                    </div>
+                    {this.props.admin  &&
+                    <div class="col-lg-12 col-2 pl-0" >
+                    <Link to="/Welcome/Users" ><FaUserCog size="1.5rem"></FaUserCog> </Link>
+                    </div>
+                    }
+                    
+                    {this.props.admin  &&   <div class="col-lg-12 col-2  pl-0" >
+                    <Link to="/Welcome/Students" ><FaGraduationCap size="1.5rem"></FaGraduationCap> </Link>
+                    </div>
+                     }
+
+                </div>
+
+        </div>
+      
+       
         
-        {/*onClick={this.MthShowWorkSpace}*/}
-        {this.props.admin  && <Link  to="/Welcome/Courses"  onMouseOver={() => this.AssistanceHover(3)} onMouseOut={ () => this.AssistanceHoverOut(3)}><BsBook size="1.5rem"></BsBook></Link>}
-        <Link  to="/Welcome/Assistance"  onMouseOver={() => this.AssistanceHover(0)} onMouseOut={ () => this.AssistanceHoverOut(0)}><AiOutlineCarryOut size="1.5rem"></AiOutlineCarryOut>  </Link> 
-        <Link to="/Welcome/Results" onMouseOver={() => this.AssistanceHover(1)} onMouseOut={ () => this.AssistanceHoverOut(1)}><BsGraphUp size="1.5rem" ></BsGraphUp>  </Link>{/*[results]*/ }
-        <Link to="/Welcome/Program"  onMouseOver={() => this.AssistanceHover(2)} onMouseOut={ () => this.AssistanceHoverOut(2)}><BsCalendar size="1.5rem"></BsCalendar> </Link>{/*Program*/ }
-        {this.props.admin  && <Link to="/Welcome/Users" onMouseOver={() => this.AssistanceHover(4)} onMouseOut={ () => this.AssistanceHoverOut(4)}><FaUserCog size="1.5rem"></FaUserCog> </Link>}
-        {this.props.admin  && <Link to="/Welcome/Students" onMouseOver={() => this.AssistanceHover(5)} onMouseOut={ () => this.AssistanceHoverOut(5)}><FaGraduationCap size="1.5rem"></FaGraduationCap> </Link>}
-        <Link to="/Welcome/School"  onMouseOver={() => this.AssistanceHover(6)} onMouseOut={ () => this.AssistanceHoverOut(6)}><FaSchool size="1.5rem"></FaSchool> </Link>{/*schoolmanager*/ }
+        {/*onClick={this.MthShowWorkSpace}
+        
+        {this.props.admin  && <Link  to="/Welcome/Courses"  ><BsBook size="1.5rem"></BsBook></Link>}
+        <Link  to="/Welcome/Assistance"  ><AiOutlineCarryOut size="1.5rem"></AiOutlineCarryOut>  </Link> 
+        <Link to="/Welcome/Results" ><BsGraphUp size="1.5rem" ></BsGraphUp>  </Link>
+        <Link to="/Welcome/Program" ><BsCalendar size="1.5rem"></BsCalendar> </Link>
+        {this.props.admin  && <Link to="/Welcome/Users" ><FaUserCog size="1.5rem"></FaUserCog> </Link>}
+        {this.props.admin  && <Link to="/Welcome/Students" ><FaGraduationCap size="1.5rem"></FaGraduationCap> </Link>}
+        <Link to="/Welcome/School"  ><FaSchool size="1.5rem"></FaSchool> </Link>{/*schoolmanager*/ } 
         
         
                             {/* bar to show wich language */}
 
 
-        <div style={{position:'absolute', left:'15%', top:'90%' , width:'4%', height:'4%', zIndex:'10', cursor:'pointer'}} onClick={()=>{
+        <div className= "divLanguage" onClick={()=>{
             if(this.state.showLanguageMenu===true){
                 this.setState({showLanguageMenu:false})
             }else{
@@ -273,9 +304,42 @@ return(<div key={item.id} style={{marginBottom:'15px', cursor:'pointer'}} onClic
     
     {this.state.SchoolTranslate && ((this.props.admin ===true) ? <span className="traslateSchool" >  <UpLanguage turkish='Okul' english='School' spanish='Colegio' greek='βγες' currentLanguage={this.props.currentLanguage} /> </span> : <span className="traslateSchoolTeach" >  <UpLanguage turkish='Okul' english='School' spanish='Colegio' greek='βγες' currentLanguage={this.props.currentLanguage} /> </span> ) }
 
+<div class="container" >
+    <div class="row">
+       <div class="col-lg-2 col-" ></div>
+       <div class="col-lg-7  col-9"  >
+       <label className="title" >{this.props.title}</label>
+       </div >
+       <div class="col-lg-3 col-3 justify-content-end" >
+       <div className="MenuUser" >
+<div className="dropdown">
+  <span  ><UpAvatar name={this.props.name} picture={this.props.picture} ></UpAvatar></span>
+  <div className="dropdown-content">
+  <div onClick={this.Logout} className="itemsMenuUser">
+  <UpLanguage turkish='çıkış' english='logout' spanish='salir' greek='βγες' currentLanguage={this.props.currentLanguage} ></UpLanguage>
+    
+      
+      </div>
+
+      
+  <div className="itemsMenuUserSettings">
+  <Link  to="/Welcome/Settings"  >  <UpLanguage turkish='ayarlar' english='settings' spanish='ajustes' greek='βγες' currentLanguage={this.props.currentLanguage} ></UpLanguage>  </Link>
+      </div>
+  
+  
+  </div>
+</div>
+
+</div>
+
+
+       </div>
+    </div>
+
+</div>
     <div className = "main">
 
-            <label className="title" >{this.props.title}</label>
+{/*    <label className="title" >{this.props.title}</label>
  
 <div className="MenuUser" >
 <div className="dropdown">
@@ -286,6 +350,8 @@ return(<div key={item.id} style={{marginBottom:'15px', cursor:'pointer'}} onClic
     
       
       </div>
+
+
   <div className="itemsMenuUserSettings">
   <Link  to="/Welcome/Settings"  >  <UpLanguage turkish='ayarlar' english='settings' spanish='ajustes' greek='βγες' currentLanguage={this.props.currentLanguage} ></UpLanguage>  </Link>
       </div>
@@ -294,7 +360,8 @@ return(<div key={item.id} style={{marginBottom:'15px', cursor:'pointer'}} onClic
   </div>
 </div>
 
-</div>
+</div>*/}
+         
 
 
 
